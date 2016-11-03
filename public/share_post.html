@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="en" ng-app="Artist" ng-controller="SharePostController" ng-cloak>
+   <head>
+      <meta charset="utf-8" />
+      <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+      <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <title>MyArtVilla | Share Post</title>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+      <meta name="viewport" content="width=device-width" />
+      <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="../assets/css/material-dashboard.css" rel="stylesheet"/>
+      <link href="../assets/css/demo.css" rel="stylesheet" />
+      <link href="../assets/fileupload/css/fileinput.css" rel="stylesheet" />
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+      <style>
+         .main-panel{
+         width: calc(100%) !important;
+         }
+      </style>
+      <style>
+         .file-actions{
+         display:none !important;
+         }
+         .btn-file{
+         width:21% !important;
+         }
+      </style>
+      <style>{{style}}
+         .file-actions{
+         display:none !important;
+         }
+         .btn-file{
+         width:21% !important;
+         }
+      </style>
+       <style>
+	.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size:20px;
+}
+.rating .filled {
+    color: orangered;
+}
+.clear{
+  margin-top:20px;
+}
+
+</style>
+<style>
+   .fa-3x{
+       font-size: 2.1em; !important;
+   }
+   .share_social{
+   vertical-align: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+   }
+   .rate_Button{
+       margin: 14px 1px !important;
+       margin-left: 14px !important;
+	   padding: 4px 15px !important;
+    font-size: 10px !important;
+   }
+   .rate_this_heading{
+       float: left;
+    color: black;
+    margin-right: 14px;
+    font-size: 17px;
+   }
+      .lead{
+      margin-top: 18px !important;
+      }
+      .social-icons{
+          padding-top: 13px !important;
+    float: right;
+    padding-right: 27px;
+      
+      }
+      .social-icons i{
+      color: #ff7f50 !important;
+      margin-right:10px;
+      }
+      .social:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      }
+      .social {
+      -webkit-transform: scale(0.8);
+      /* Browser Variations: */
+      -moz-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      }
+      /*
+      Multicoloured Hover Variations
+      */
+      #social-fb:hover {
+      color: #3B5998;
+      }
+      #social-tw:hover {
+      color: #4099FF;
+      }
+      #social-gp:hover {
+      color: #d34836;
+      }
+      #social-em:hover {
+      color: #f39c12;
+      }
+      /* Button styles: */
+      i.fb,       span.fb{         color: #3b5998; }
+      i.tw,       span.tw{     	color: #00aced; }
+      i.google,   span.google{ 	color: #dd4b39; }
+      i.linkin,   span.linkin{ 	color: #007bb6; }
+      i.pinterest,span.pinterest{ color: #cb2027; }
+      #colorstar { color: #ee8b2d;}
+      .badForm {color: #FF0000;}
+      .goodForm {color: #00FF00;}
+      .evaluation { margin-left:30px;} 
+      .profile_img_post {
+      border: 1px solid rgba(0, 0, 0, .1);
+      height: 48px !important;
+      }.image-post {
+      display: block;
+      width: 50px;
+      height: 50px;
+      }
+      .post_description .img_post {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      height: 450px;
+      display: block;
+      }
+      .custom_hr_post {
+      margin-top: 20px;
+      margin-bottom: 0px !important;
+      border: 0;
+      border-top: 1px solid #eee;
+      width: 100% !important;
+      }
+      .right_padding{
+      padding-right:25px;
+      color: rgb(58, 87, 149);
+      }
+      .custom_input_padding{
+      padding-bottom:20px;
+      }
+      .comment_hr{
+      clear: both;
+      }
+      .p_commnts_count{
+      display: inline-block;
+      float: right;
+      margin-right: 10px;
+      }
+      .p_comments{
+      color: #365899;
+      display: inline-block;
+      }  
+      .post_desc{
+      margin-left: 14px;
+      }
+      .img_post_comment{
+      float:left;
+      }
+      .links-post1{
+      padding-left: 15px;
+      padding-bottom: 0px;
+      max-width: 100%;
+      padding-top: 15px;
+      }
+      .link-post{
+      margin-right:10px;
+      }
+      .comments{
+      padding-left:15px;
+      }
+      .title-post{
+      color: rgb(58, 87, 149);
+      font-weight: bold;
+      }
+      .star_rating1{
+      float: left;
+    padding-left: 14px;
+    padding-top:10px;
+    padding-right: 20px;
+      }
+      .star_rating2{
+      padding-top:10px;
+      }
+      .p_rate_this_work{
+          float: left;
+    line-height: 2.40;
+    padding-top: 10px;
+    padding-right: 16px;
+    font-weight: 600;
+      }
+   </style>
+   <style>
+	.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size:20px;
+}
+.rating .filled {
+    color: orangered;
+}
+.clear{
+  margin-top:20px;
+}
+
+</style>
+<style>
+   
+   .fa-3x{
+       font-size: 2.1em; !important;
+   }
+   .share_social{
+   vertical-align: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+   }
+   .rate_Button{
+       margin: 14px 1px !important;
+       margin-left: 14px !important;
+	   padding: 4px 15px !important;
+    font-size: 10px !important;
+   }
+   .rate_this_heading{
+       float: left;
+    color: black;
+    margin-right: 14px;
+    font-size: 17px;
+   }
+      .lead{
+      margin-top: 18px !important;
+      }
+      .social-icons{
+          padding-top: 13px !important;
+    float: right;
+    padding-right: 27px;
+      
+      }
+      .social-icons i{
+      color: #ff7f50 !important;
+      margin-right:10px;
+      }
+      .social:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      }
+      .social {
+      -webkit-transform: scale(0.8);
+      /* Browser Variations: */
+      -moz-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      }
+      /*
+      Multicoloured Hover Variations
+      */
+      #social-fb:hover {
+      color: #3B5998;
+      }
+      #social-tw:hover {
+      color: #4099FF;
+      }
+      #social-gp:hover {
+      color: #d34836;
+      }
+      #social-em:hover {
+      color: #f39c12;
+      }
+      /* Button styles: */
+      i.fb,       span.fb{         color: #3b5998; }
+      i.tw,       span.tw{     	color: #00aced; }
+      i.google,   span.google{ 	color: #dd4b39; }
+      i.linkin,   span.linkin{ 	color: #007bb6; }
+      i.pinterest,span.pinterest{ color: #cb2027; }
+      #colorstar { color: #ee8b2d;}
+      .badForm {color: #FF0000;}
+      .goodForm {color: #00FF00;}
+      .evaluation { margin-left:30px;} 
+      .profile_img_post {
+      border: 1px solid rgba(0, 0, 0, .1);
+      height: 48px !important;
+      }.image-post {
+      display: block;
+      width: 50px;
+      height: 50px;
+      }
+      .post_description .img_post {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      height: 450px;
+      display: block;
+      }
+      .custom_hr_post {
+      margin-top: 20px;
+      margin-bottom: 0px !important;
+      border: 0;
+      border-top: 1px solid #eee;
+      width: 100% !important;
+      }
+      .right_padding{
+      padding-right:25px;
+      color: rgb(58, 87, 149);
+      }
+      .custom_input_padding{
+      padding-bottom:20px;
+      }
+      .comment_hr{
+      clear: both;
+      }
+      .p_commnts_count{
+      display: inline-block;
+      float: right;
+      margin-right: 10px;
+      }
+      .p_comments{
+      color: #365899;
+      display: inline-block;
+      }  
+      .post_desc{
+      margin-left: 14px;
+      }
+      .img_post_comment{
+      float:left;
+      }
+      .links-post1{
+      padding-left: 15px;
+      padding-bottom: 0px;
+      max-width: 100%;
+      padding-top: 15px;
+      }
+      .link-post{
+      margin-right:10px;
+      }
+      .comments{
+      padding-left:15px;
+      }
+      .title-post{
+      color: rgb(58, 87, 149);
+      font-weight: bold;
+      }
+      .star_rating1{
+      float: left;
+    padding-left: 14px;
+    padding-top:10px;
+    padding-right: 20px;
+      }
+      .star_rating2{
+      padding-top:10px;
+      }
+      .p_rate_this_work{
+          float: left;
+    line-height: 2.40;
+    padding-top: 10px;
+    padding-right: 16px;
+    font-weight: 600;
+      }
+.hover:hover {
+  pointer-events: none;
+}
+.red{
+  color:red;
+}
+
+.blue{
+ pointer-events: none;
+}
+   </style>
+   </head>
+   <body>
+      <!-- {{theme}} -->
+      <div class="wrapper">
+         <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" >Share Post</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+						 <li>
+					<a ng-if="user_log_in == 1" data-toggle="modal" data-target="#login"> Login</a>
+                    </li>
+                    <li>
+					<a  ng-if="user_log_in == 1" data-toggle="modal" data-target="#register"> Register</a>
+                    </li>
+					<li class="dropdown">
+						<a  class="dropdown-toggle" data-toggle="dropdown">
+							   <i class="material-icons">person</i>
+							   <p class="hidden-lg hidden-md">Profile</p>
+ 						</a>
+						<ul class="dropdown-menu">
+							<li ng-if="user_log_in == 1"><a data-toggle="modal" data-target="#login">Login</a></li>
+							<li ng-if="user_log_in == 1"><a data-toggle="modal" data-target="#register">Register</a></li>
+							<li ng-if="user_log_in == 0"><a>Welcome {{user_name}}</a></li>
+							<li ng-if="user_log_in == 0"><a ng-click="logout_now()">Logout</a></li>
+							
+						</ul>
+					</li>
+							
+						</ul>
+					</div>
+				</div>
+			</nav>
+            <div class="content">
+
+<div class="container-fluid">
+    <div class="row">
+	<div class="col-md-12">
+	<div class="thumbnail thumbnail-post" ng-repeat="works1 in works|reverse">
+		<div class="caption">
+			<div class="media">
+				<div class="media-left">
+					<a href="" class="image-post">
+							<img ng-if="user_profile.profile_pic.length > 0 " class="img" src="{{profile_pic}}" />
+							<img ng-if="user_profile.profile_pic.length == 0 " class="img" src="../assets/img/avatar.png" />
+							<img ng-if="user_profile.profile_pic.length == null " class="img" src="../assets/img/avatar.png" />
+					</a>	
+				</div>
+				<div class="media-body">
+				<a class="media-heading title-post" href="share_post.html">{{works1.post_name|ucfirst}}</a>
+				<a href="user_details.html"><h5>5 Hours ago</h5></a>
+				</div>
+			</div>
+			<div class="post_description"> 
+			<p class="post_desc">{{works1.post_description}}</p><p>
+				<img alt="Client Logo" title="" src="{{works1.file_path}}" class="img_post">
+			</p></div>
+		</div>
+		<hr class="custom_hr_post">
+		{{works1.post_rating_average}}
+		<div class="row">
+            <div class="col-md-12">
+            <div 
+            	star-rating rating-value="works1.post_rating_average" 
+            	class="hover star_rating1" 
+            	max="5" 
+            	on-rating-selected="getSelectedRating(1)" 
+            	style="float:left"
+            	ng-class="{hover: hoverme}"
+            >
+            </div>
+			<p style="float:left" class="p_rate_this_work">Rate This Work</p>
+			<div ng-init="rating = 1">
+			
+			</div>
+			<div 
+				star-rating rating-value="rating" 
+				ng-disabled="true" 
+				max="5" 
+				class="star_rating2" 
+				on-rating-selected="rateFunction1(rating,works1.post_id)" 
+				style="float:left"
+				ng-class="class"
+			>
+			</div>
+			<button  ng-class="class" type="button" class="btn btn-primary btn-xs rate_Button" ng-click="rateFunction(rating,works1.post_id)">Rate</button>
+                                 <div class="social-icons">
+								 <span class="share_social">Share</span>
+                                    <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                    <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                                    <a 
+                                    	href="javascript:(
+											function(){
+											var w=480;var h=380;
+											var x=Number((window.screen.width-w)/2);
+											var y=Number((window.screen.height-h)/2);
+											window.open('https://plus.google.com/share?url='+encodeURIComponent(location.href)+'
+											  &title='+encodeURIComponent(document.title),'','width='+w+',height='+h+',left='+x+',top='+y+',
+											  scrollbars=no');
+	 									 })();" 
+	  									style="background: url(/wp-content/themes/HTML5/images/googleplus.png) no-repeat scroll left center transparent;"
+	  								>
+	  									<i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i>
+	  								</a>
+                                    <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-linkedin-square fa-3x social"></i></a>
+                                 </div>
+                              </div>
+                             
+                           </div>
+		<hr class="custom_hr_post">
+		 <div class="links-post1">
+							<img ng-if="user_profile.profile_pic.length > 0 " width="50" height="50" class="img" src="{{profile_pic}}" />
+							<img ng-if="user_profile.profile_pic.length == 0 " width="50" height="50" class="img" src="../assets/img/avatar.png" />
+							<img ng-if="user_profile.profile_pic.length == null " width="50" height="50" class="img" src="../assets/img/avatar.png" />
+			<div class="links-post">
+<!-- 			<div star-rating rating-value="works1.post_rating_average" max="10" on-rating-selected="getSelectedRating(1)"></div> -->
+<!-- 			<div ng-init="rating = 1"> -->
+			
+<!-- 			</div> -->
+<!-- 			<div star-rating rating-value="rating" max="10" on-rating-selected="rateFunction(rating,works1.post_id)"></div> -->
+				<div class="form-group">
+				    <div class="col-sm-10 custom_input_padding">
+					<input type="text" class="form-control custom_form_group" ng-model="comment_text" ng-enter="submitComment(comment_text,works1.post_id)" id="pwd" placeholder="Write a comment">
+					</div>	
+				</div>
+		</div>
+		<hr class="comment_hr">
+			<div class="comments">
+				<p class="p_comments">View Previous Comments</p>
+				<p class="p_commnts_count">1 of 1</p>
+				<p ng-repeat ="comments in works1.post_comments|reverse" class="PComment"><img src="./img/man.jpg" width="50" height="50"><span class="commentor_name"> {{comments.firstname|ucfirst}} {{comments.lastname|ucfirst}}</span> <span>{{comments.comment}}</span></p>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+<div class="modal fade" id="login" role="dialog" style="z-index: 0">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close" data-dismiss="modal">×</button>
+		          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" novalidate="" name="Loginform">
+		           <div class="form-group" ng-show="error">
+						<div class="alert alert-danger">
+							 <strong>Error!</strong> {{error}}
+						</div>
+					</div>
+			        <div class="alert alert-success" ng-show="sucess">
+					  <strong>Success!</strong> {{sucess}}
+					</div>
+		            <div class="form-group" ng-class="{ 'has-error' : Loginform.user_name.$invalid && !Loginform.user_name.$pristine }">
+		              <label for="user_name"><span class="glyphicon glyphicon-user"></span> Username</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="user_name" 
+		              	name="user_name"
+		              	ng-model="user.user_name"
+		              	placeholder="Enter Username"
+		              	required
+		              >
+		            <p ng-show="Loginform.user_name.$invalid && !Loginform.user_name.$pristine"
+							class="help-block">Username is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Loginform.password.$invalid && !Loginform.password.$pristine }">
+		              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="password" 
+		              	name="password"
+		              	ng-model="user.password"
+		              	placeholder="Enter password"
+		              	required
+		              >
+		            <p ng-show="Loginform.password.$invalid && !Loginform.password.$pristine"
+							class="help-block">Password is required
+					</p>
+		            </div>
+		            <div class="checkbox">
+		              <label><input type="checkbox" value="" checked="">Remember me</label>
+		            </div>
+		              <button 
+		              	type="submit" 
+		              	class="btn btn-success btn-block"
+		              	ng-click="login_user(user)"
+		              	ng-disabled="Loginform.$invalid"
+		              >
+		              	<span class="glyphicon glyphicon-off"></span> Login
+		              </button>
+		          </form>
+		        </div>
+		        <div class="modal-footer">
+		          <button 
+		          	type="submit" 
+		          	class="btn btn-danger btn-default pull-left" 
+		          	data-dismiss="modal"
+		          >
+		          	<span class="glyphicon glyphicon-remove"></span> Cancel
+		          </button>
+		          <p>Not a member? <a href="#">Sign Up</a></p>
+		          <p>Forgot <a href="#">Password?</a></p>
+		        </div>
+		      
+		    </div>
+		  </div> 
+		</div>
+		
+		<div class="modal fade" id="register" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close"  data-dismiss="modal">×</button>
+		          <h4><span class="glyphicon glyphicon-lock"></span> Register</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" novalidate="" name="Registerform">
+			        <div class="form-group" ng-show="error1">
+						<div class="alert alert-danger">
+							 <strong>Error!</strong> {{error1}}
+						</div>
+					</div>
+			        <div class="alert alert-success" ng-show="sucess1">
+					  <strong>Success!</strong> {{sucess1}}
+					</div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.user_name.$invalid && !Registerform.user_name.$pristine }">
+		              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="usrname" 
+		              	name="user_name" 
+		              	ng-model="user1.user_name"
+		              	placeholder="Enter username"
+		              	required
+		              >
+		             <p ng-show="Registerform.user_name.$invalid && !Registerform.user_name.$pristine"
+							class="help-block">Username is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.firstname.$invalid && !Registerform.firstname.$pristine }">
+		              <label for="firstname"><span class="glyphicon glyphicon-user"></span> Firstname</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="firstname" 
+		              	name="firstname" 
+		              	ng-model="user1.firstname"
+		              	placeholder="Enter firstname"
+		              	required
+		              >
+		             <p ng-show="Registerform.firstname.$invalid && !Registerform.firstname.$pristine"
+							class="help-block">Firstname is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.lastname.$invalid && !Registerform.lastname.$pristine }">
+		              <label for="lstname"><span class="glyphicon glyphicon-user"></span> Lastname</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="lastname" 
+		              	name="lastname" 
+		              	ng-model="user1.lastname"
+		              	placeholder="Enter lastname"
+		              	required
+		              >
+		             <p ng-show="Registerform.lastname.$invalid && !Registerform.lastname.$pristine"
+							class="help-block">Lastname is required
+					</p>
+		            </div>
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.email.$invalid && !Registerform.email.$pristine }">
+		              <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+		              <input 
+		              	type="email" 
+		              	class="form-control" 
+		              	id="email"
+		              	name="email"
+		              	ng-model="user1.email"
+		              	ng-pattern="email_pattern" 
+		              	placeholder="Enter Email"
+		              	required
+		              >
+		              <p  ng-show="Registerform.email.$invalid && !Registerform.email.$pristine && Registerform.email.$error.pattern"
+							class="help-block">Email should be in proper format.
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.Password.$invalid && !Registerform.Password.$pristine }">
+		              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="psw" 
+		              	name="password"
+		              	ng-model="user1.password"
+		              	placeholder="Enter password"
+		              	required
+		              >
+		             <p ng-show="Registerform.password.$invalid && !Registerform.password.$pristine"
+							class="help-block">Password is required
+					</p>
+		            </div>
+		            
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.confirm_password.$invalid && !Registerform.confirm_password.$pristine }">
+		              <label for="confirmpsw"><span class="glyphicon glyphicon-eye-open"></span>Confirm Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="confirmpsw"
+		              	name="confirm_password"
+		              	ng-model="user1.confirm_password" 
+		              	placeholder="Enter Confirm password"
+		              	required
+		              >
+		            <p ng-show="Registerform.confirm_password.$invalid && !Registerform.confirm_password.$pristine"
+							class="help-block">Confirm Password is required
+					</p>
+		            </div>
+		             <div ng-show="select_role" class="form-group" ng-class="{ 'has-error' : Registerform.role.$invalid && !Registerform.role.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Choose Role</label>
+		              <select ng-model="user1.role" class="form-control" >
+		              	<option>Guest</option>
+		              </select>
+		            <p ng-show="Registerform.role.$invalid && !Registerform.role.$pristine"
+							class="help-block">Role is required
+					</p>
+		            </div>
+		             <div ng-show="guest_role" class="form-group" ng-class="{ 'has-error' : Registerform.role.$invalid && !Registerform.role.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Choose Role</label>
+		              <select ng-model="user1.role" class="form-control" >
+		              	<option>Guest</option>
+		              </select>
+		            <p ng-show="Registerform.role.$invalid && !Registerform.role.$pristine"
+							class="help-block">Role is required
+					</p>
+		            </div>
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.contact_no.$invalid && !Registerform.contact_no.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Mobile Number</label>
+		              <input 
+		              	type="number" 
+		              	class="form-control" 
+		              	ng-maxlength = "10"
+		              	ng-minlength = "10"
+		              	id="mobile" 
+		              	name="contact_no"
+		              	ng-model="user1.contact_no"
+		              	placeholder="Enter Mobile Number"
+		              	required
+		              >
+		            <p ng-show="Registerform.contact_no.$error.required && !Registerform.contact_no.$pristine"
+							class="help-block">Mobile No is required
+					</p>
+		            <p ng-show="Registerform.contact_no.$error.maxlength && !Registerform.contact_no.$pristine"
+							class="help-block">Minimum 10 digits allowed.
+					</p>
+		            <p ng-show="Registerform.contact_no.$error.minlength && !Registerform.contact_no.$pristine"
+							class="help-block">Minimun 10 digits allowed.
+					</p>
+		            </div>
+		              <button 
+		              	ng-click="register_user(user1)" 
+		              	ng-disabled="Registerform.$invalid"
+		              	type="submit" class="btn btn-success btn-block"
+		              >
+		              	<span class="glyphicon glyphicon-off"></span>Register
+		              </button>
+		          </form>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div> 
+
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+   <script src="../assets/js/angular.min.js"></script>
+   <script src="../assets/js/angular-route.min.js"></script>
+   <script src="./app/artist_route.js"></script>
+   <script src="../js/test.js" async> </script>
+   <script src="../assets/js/firebase.js"> </script>
+   <script src="../assets/js/RTCPeerConnection-v1.5.js"> </script>
+   <script src="../assets/js/commits.js" async> </script>
+   <script src="http://platform.twitter.com/widgets.js"></script>
+   <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" data-pin-build='parsePins'></script>
+   <script src="http://platform.tumblr.com/v1/share.js"></script>
+   <script src="../assets/angular-rating/src/angular-rating.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+   <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+   <script src="../assets/js/material.min.js" type="text/javascript"></script>
+   <script src="../assets/js/chartist.min.js"></script>
+   <script src="http://localhost:8989/socket.io/socket.io.js"></script>
+   <script src="../js/agency.min.js"></script>
+   <script src="../assets/js/bootstrap-notify.js"></script>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+   <script src="../assets/js/material-dashboard.js"></script>
+   <script src="../assets/fileupload/js/fileinput.js"></script>
+   <script src="../assets/js/demo.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js"></script>
+   <script type="text/javascript" src="../assets/js/sweetalert.min.js"></script>
+   <script type="text/javascript" src="../assets/js/ngSweetAlert.js"></script>
+   <script type="text/javascript" src="./controller/Posts/SharePostController.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9evpx2GejhZPB3D4bhMrYtsB1QO90TS0"></script>
+  <script>
+      window.___gcfg = {
+        lang: 'en-US',
+        parsetags: 'onload'
+      };
+    </script>
+   <script>
+      $('#file-fr').fileinput({
+             language: 'fr',
+             uploadUrl: '#',
+             allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+         });
+         $('#file-es').fileinput({
+             language: 'es',
+             uploadUrl: '#',
+             allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+         });
+         $("#file-0").fileinput({
+             allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+         });
+         $("#file-1").fileinput({
+             uploadUrl: '', // you must set a valid URL here else you will get an error
+             allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+             overwriteInitial: false,
+             maxFileSize: 1000,
+             maxFilesNum: 10,
+             slugCallback: function(filename) {
+                 return filename.replace('(', '_').replace(']', '_');
+             }
+      });
+         
+      $("#file-3").fileinput({
+      	showUpload: false,
+      	showCaption: false,
+      	browseClass: "btn btn-primary btn-lg",
+      	fileType: "any",
+             previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+      });
+      $("input[name*='uploadvideo']").fileinput({
+      	uploadExtraData: {kvId: '10'}
+      });
+         $(".btn-warning").on('click', function() {
+             if ($('#file-4').attr('disabled')) {
+                 $('#file-4').fileinput('enable');
+             } else {
+                 $('#file-4').fileinput('disable');
+             }
+         });  
+         
+         $(".btn-info").on('click', function() {
+             $('#file-4').fileinput('refresh', {previewClass:'bg-info'});
+         });
+         
+         $(document).ready(function() {
+             $("#test-upload").fileinput({
+                 'showPreview' : false,
+                 allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+                 'elErrorContainer': '#errorBlock'
+             });
+         });
+      
+      
+      
+      $(document).ready(function(){
+      	 $("#input-20").fileinput({
+      	        browseClass: "btn btn-primary btn-block",
+      	        showCaption: false,
+      	        showRemove: true,
+      	        showUpload: false
+      	    });
+      })
+      
+   </script>
+    <script>
+      // Starrr plugin (https://github.com/dobtco/starrr)
+      var __slice = [].slice;
+      
+      (function($, window) {
+       var Starrr;
+      
+       Starrr = (function() {
+         Starrr.prototype.defaults = {
+           rating: void 0,
+           numStars: 5,
+           change: function(e, value) {}
+         };
+      
+         function Starrr($el, options) {
+           var i, _, _ref,
+             _this = this;
+      
+           this.options = $.extend({}, this.defaults, options);
+           this.$el = $el;
+           _ref = this.defaults;
+           for (i in _ref) {
+             _ = _ref[i];
+             if (this.$el.data(i) != null) {
+               this.options[i] = this.$el.data(i);
+             }
+           }
+           this.createStars();
+           this.syncRating();
+           this.$el.on('mouseover.starrr', 'span', function(e) {
+             return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);
+           });
+           this.$el.on('mouseout.starrr', function() {
+             return _this.syncRating();
+           });
+           this.$el.on('click.starrr', 'span', function(e) {
+             return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);
+           });
+           this.$el.on('starrr:change', this.options.change);
+         }
+      
+         Starrr.prototype.createStars = function() {
+           var _i, _ref, _results;
+      
+           _results = [];
+           for (_i = 1, _ref = this.options.numStars; 1 <= _ref ? _i <= _ref : _i >= _ref; 1 <= _ref ? _i++ : _i--) {
+             _results.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>"));
+           }
+           return _results;
+         };
+      
+         Starrr.prototype.setRating = function(rating) {
+           if (this.options.rating === rating) {
+             rating = void 0;
+           }
+           this.options.rating = rating;
+           this.syncRating();
+           return this.$el.trigger('starrr:change', rating);
+         };
+      
+         Starrr.prototype.syncRating = function(rating) {
+           var i, _i, _j, _ref;
+      
+           rating || (rating = this.options.rating);
+           if (rating) {
+             for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+               this.$el.find('span').eq(i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+             }
+           }
+           if (rating && rating < 5) {
+             for (i = _j = rating; rating <= 4 ? _j <= 4 : _j >= 4; i = rating <= 4 ? ++_j : --_j) {
+               this.$el.find('span').eq(i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+             }
+           }
+           if (!rating) {
+             return this.$el.find('span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+           }
+         };
+      
+         return Starrr;
+      
+       })();
+       return $.fn.extend({
+         starrr: function() {
+           var args, option;
+      
+           option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+           return this.each(function() {
+             var data;
+      
+             data = $(this).data('star-rating');
+             if (!data) {
+               $(this).data('star-rating', (data = new Starrr($(this), option)));
+             }
+             if (typeof option === 'string') {
+               return data[option].apply(data, args);
+             }
+           });
+         }
+       });
+      })(window.jQuery, window);
+      
+      $(function() {
+       return $(".starrr").starrr();
+      });
+      
+      $( document ).ready(function() {
+         
+         var correspondence=["","Really Bad","Bad","Fair","Good","Excelent"];
+           
+       $('.ratable').on('starrr:change', function(e, value){
+        
+          $(this).closest('.evaluation').children('#count').html(value);
+          $(this).closest('.evaluation').children('#meaning').html(correspondence[value]);
+          
+          var currentval=  $(this).closest('.evaluation').children('#count').html();
+          
+         var target=  $(this).closest('.evaluation').children('.indicators');
+         target.css("color","black");
+         target.children('.rateval').val(currentval);
+         target.children('#textwr').html(' ');
+        
+         if(value<3){
+          <!-- target.css("color","red").show();  -->
+          <!-- target.children('#textwr').text('What can be improved?'); -->
+         }else{
+             if(value>3){    
+                 <!-- target.css("color","green").show();  -->
+                 <!-- target.children('#textwr').html('What was done correctly?'); -->
+             }else{
+            target.hide();  
+             }
+         }
+             
+      
+       });
+       
+       
+       
+      
+       
+       $('#hearts-existing').on('starrr:change', function(e, value){
+         $('#count-existing').html(value);
+       });
+      });
+      
+      
+      
+      
+      
+      $(function () {
+         $('.button-checkbox').each(function () {
+      
+             // Settings
+             var $widget = $(this),
+                 $button = $widget.find('button'),
+                 $checkbox = $widget.find('input:checkbox'),
+                 color = $button.data('color'),
+                 settings = {
+                     on: {
+                         icon: 'glyphicon glyphicon-check'
+                     },
+                     off: {
+                         icon: 'fa fa-square-o'
+                     }
+                 };
+      
+             // Event Handlers
+             $button.on('click', function () {
+                 $checkbox.prop('checked', !$checkbox.is(':checked'));
+                 $checkbox.triggerHandler('change');
+                 updateDisplay();
+             });
+             $checkbox.on('change', function () {
+                 updateDisplay();
+             });
+      
+             // Actions
+             function updateDisplay() {
+                 var isChecked = $checkbox.is(':checked');
+      
+                 // Set the button's state
+                 $button.data('state', (isChecked) ? "on" : "off");
+      
+                 // Set the button's icon
+                 $button.find('.state-icon')
+                     .removeClass()
+                     .addClass('state-icon ' + settings[$button.data('state')].icon);
+      
+                 // Update the button's color
+                 if (isChecked) {
+                     $button
+                         .removeClass('btn-default')
+                         .addClass('btn-' + color + ' active');
+                 }
+                 else {
+                     $button
+                         .removeClass('btn-' + color + ' active')
+                         .addClass('btn-default');
+                 }
+             }
+      
+             // Initialization
+             function init() {
+      
+                 updateDisplay();
+      
+                 // Inject the icon if applicable
+                 if ($button.find('.state-icon').length == 0) {
+                     $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+                 }
+             }
+             init();
+         });
+      });
+      
+      
+   </script>
+</html>

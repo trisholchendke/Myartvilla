@@ -1,0 +1,1469 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyartVilla">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple_icons_57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple_icons_72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple_icons_114x114.png">
+<title>MYARTVILLA | Home</title>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/theme.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+</head>
+<body class="page_with_abs_header" ng-controller="IndexDashboardcontroller">
+	<div class="main_header">
+        <div class="header_parent_wrap">
+            <header>
+                <div class="logo_sect">
+                    <a href="index.html" class="logo">
+                        <!-- <img src="img/logo_retina.png" class="dark_logo" alt="" />
+                        <img src="img/logo_white_retina.png" class="white_logo" alt="" /> -->
+						<h3 style="color:#fff;">MYARTVILLA LOGO</h3>
+                    </a>
+                </div>
+                <div class="fright">
+                    <nav>
+                        <ul class="menu">
+                            <li class="current-menu-parent menu-item-has-children"><a href="javascript:void(0);">Home</a>
+                               <!--  <div class="sub-nav">
+                                    <ul class="sub-menu">
+                                        <li class="current-menu-item"><a href="index.html">Variant 1</a></li>
+                                        <li><a href="home2.html">Variant 2</a></li>
+                                        <li><a href="home3.html">Variant 3</a></li>
+                                        <li><a href="home4.html">Variant 4</a></li>
+                                        <li><a href="home5.html">Variant 5</a></li>
+                                        <li><a href="home6.html">Variant 6</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);">Page1</a>
+                                <!-- <div class="sub-nav">
+                                    <ul class="sub-menu">
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">About</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="about1.html">Variant 1</a></li>
+                                                    <li><a href="about2.html">Variant 2</a></li>
+                                                    <li><a href="about3.html">Variant 3</a></li>
+                                                    <li><a href="about4.html">Variant 4</a></li>
+                                                    <li><a href="about5.html">Variant 5</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Gallery</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="gallery_albums.html">Albums</a></li>
+                                                    <li><a href="gallery_flow.html">Flow</a></li>
+                                                    <li><a href="gallery_grid.html">Grid</a></li>
+                                                    <li><a href="gallery_masonry.html">Masonry</a></li>
+                                                    <li><a href="gallery_ribbon.html">Ribbon</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="showreel.html">Showreel</a></li>
+                                        <li><a href="404.html">404 Error</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="coming_soon.html">Coming Soon</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);">Page2</a>
+                                <!-- <div class="sub-nav">
+                                    <ul class="sub-menu">
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Grid</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="portfolio_grid_1col.html">1 Column</a></li>
+                                                    <li><a href="portfolio_grid_2col.html">2 Columns</a></li>
+                                                    <li><a href="portfolio_grid_3col.html">3 Columns</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Masonry</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="portfolio_masonry_1col.html">1 Column</a></li>
+                                                    <li><a href="portfolio_masonry_2col.html">2 Columns</a></li>
+                                                    <li><a href="portfolio_masonry_3col.html">3 Columns</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Grid with Title</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="portfolio_grid_title_2col.html">2 Columns</a></li>
+                                                    <li><a href="portfolio_grid_title_3col.html">3 Columns</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Masonry with Title</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="portfolio_masonry_title_2col.html">2 Columns</a></li>
+                                                    <li><a href="portfolio_masonry_title_3col.html">3 Columns</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Fullscreen</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item-has-children"><a href="javascript:void(0);">2 Columns</a>
+                                                        <div class="sub-nav">
+                                                            <ul class="sub-menu">
+                                                                <li><a href="portfolio_2col_grid.html">Grid</a></li>
+                                                                <li><a href="portfolio_2col_masonry.html">Masonry</a></li>
+                                                                <li><a href="portfolio_2col_grid_title.html">Grid with Title</a></li>
+                                                                <li><a href="portfolio_2col_masonry_title.html">Masonry with Title</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="menu-item-has-children"><a href="javascript:void(0);">3 Columns</a>
+                                                        <div class="sub-nav">
+                                                            <ul class="sub-menu">
+                                                                <li><a href="portfolio_3col_grid.html">Grid</a></li>
+                                                                <li><a href="portfolio_3col_masonry.html">Masonry</a></li>
+                                                                <li><a href="portfolio_3col_grid_title.html">Grid with Title</a></li>
+                                                                <li><a href="portfolio_3col_masonry_title.html">Masonry with Title</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="menu-item-has-children"><a href="javascript:void(0);">4 Columns</a>
+                                                        <div class="sub-nav">
+                                                            <ul class="sub-menu">
+                                                                <li><a href="portfolio_4col_grid.html">Grid</a></li>
+                                                                <li><a href="portfolio_4col_masonry.html">Masonry</a></li>
+                                                                <li><a href="portfolio_4col_grid_title.html">Grid with Title</a></li>
+                                                                <li><a href="portfolio_4col_masonry_title.html">Masonry with Title</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Single Post</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="portfolio_post_fullwidth.html">Fullwidth Post</a></li>
+                                                    <li><a href="portfolio_post_right_sidebar.html">With Right Sidebar</a></li>
+                                                    <li><a href="portfolio_post_left_sidebar.html">With Left Sidebar</a></li>
+                                                    <li><a href="portfolio_post_flow.html">Post with Flow</a></li>
+                                                    <li><a href="portfolio_post_header_image.html">Post with Header Image</a></li>
+                                                    <li><a href="portfolio_post_slider.html">Post with Slider</a></li>
+                                                    <li><a href="portfolio_post_slider_thumbnails.html">Slider with thumbnails</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);">Pgae 3</a>
+                               <!--  <div class="sub-nav">
+                                    <ul class="sub-menu">
+                                        <li><a href="blog_fullwidth.html">Fullwidth Journal</a></li>
+                                        <li><a href="blog_right_sidebar.html">Journal with Right Sidebar</a></li>
+                                        <li><a href="blog_left_sidebar.html">Journal with Left Sidebar</a></li>
+                                        <li><a href="blog_masonry_right_sidebar.html">Masonry with Right Sidebar</a></li>
+                                        <li><a href="blog_masonry_fullscreen.html">Fullscreen Masonry</a></li>
+                                        <li class="menu-item-has-children"><a href="javascript:void(0);">Journal Posts</a>
+                                            <div class="sub-nav">
+                                                <ul class="sub-menu">
+                                                    <li><a href="blog_post_fullwidth.html">Fullwidth Post</a></li>
+                                                    <li><a href="blog_post_right_sidebar.html">With Right Sidebar</a></li>
+                                                    <li><a href="blog_post_left_sidebar.html">With Left Sidebar</a></li>
+                                                    <li><a href="blog_post_fullwidth_image.html">Post with Fullwidth Image</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="menu-item-has-children"><a href="javascript:void(0);">Page 4</a>
+                               <!--  <div class="sub-nav">
+                                    <ul class="sub-menu">
+                                        <li><a href="contact1.html">Variant 1</a></li>
+                                        <li><a href="contact2.html">Variant 2</a></li>
+                                        <li><a href="contact3.html">Variant 3</a></li>
+                                        <li><a href="contact4.html">Variant 4</a></li>
+                                        <li><a href="contact5.html">Variant 5</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>							
+							 <li class="menu-item-has-children"><a href="javascript:void(0);">Page 4</a>
+                               <!--  <div class="sub-nav">
+                                    <ul class="sub-menu">
+                                        <li><a href="contact1.html">Variant 1</a></li>
+                                        <li><a href="contact2.html">Variant 2</a></li>
+                                        <li><a href="contact3.html">Variant 3</a></li>
+                                        <li><a href="contact4.html">Variant 4</a></li>
+                                        <li><a href="contact5.html">Variant 5</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- lang_selector -->
+                    <!-- <div class="lang_selector">
+                        <a href="javascript:void(0)" class="lang_btn current_language">Eng</a>
+                        <ul class="language_list">
+                            <li>Eng</li>
+                            <li>Deu</li>
+                            <li>Fra</li>
+                        </ul>
+                    </div> -->
+                    <!-- //lang_selector -->
+                    <div class="open_sidebar_area"></div>
+                    <!-- top_search -->
+                    <!-- <div class="top_search">
+                        <form action="#" method="get" name="search_form">
+                            <input type="text" class="ct-search-input" value="" name="s" placeholder="Type and Hit Enter">
+                            <input type="submit" value="Search" class="s_submit">
+                            <span class="top-icon-search"></span>
+                        </form>
+                    </div> -->
+                    <!-- //top_search -->
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </header>
+        </div>
+    </div>
+    <div class="header_holder"></div>
+    <div class="mobile_menu_wrapper"></div>
+    
+    <div class="wrapper">
+    	<div class="container">
+        	<div class="content_block row no-sidebar">
+            	<div class="fl-container">
+                	<div class="posts-block">
+                        <div class="contentarea">
+
+                            <div class="fw_block wall_wrap mb74">
+                                <div class="flex_fullscreen">
+                                    <div class="flexslider" style="height:400px !important">
+                                        <ul class="slides">
+                                            <li>
+                                                <img src="img/slider/fullscreen4.jpg" class="slide_bg" alt="" />
+                                                <div class="container absolute_container dark_bg">
+                                                    <div class="bg_title">
+                                                        <div class="caption_container">
+														<ul class="categories">
+														<li ><a class="art categories" ng-click="getRolewiseData('Art And Photography');"  href="javascript:void(0)">Art & Photography</a></li>
+														<li ><a class="writing categories" ng-click="getRolewiseData('Writer');" href="javascript:void(0)">Writing</a></li>
+														<li ><a class="fashion1 categories" ng-click="getRolewiseData('Fashion');" href="javascript:void(0)">Fashion</a></li>
+														<li ><a class="shortfilm categories" ng-click="getRolewiseData('Short Films');" href="javascript:void(0)">Shortfilm</a></li>
+														</ul>
+                     <div class="social_icons"></div>
+                     <div class="caption_text_slider">CONNECT PEOPLE TO WORK</div>
+					 <div class="container">
+					  <div class="col-md-12"><button type="button" data-toggle="modal" data-target="#login" class="btn btn-info login_btn">Login</button><button type="button" class="btn btn-info register_btn" data-toggle="modal" data-target="#register">Register</button></div>
+					 </div>
+                    <!--  <form class="caption_searchbox ng-pristine ng-valid">
+                        <div>
+                           <div>
+                              <div class="input-group col-md-12 custom_margin_inputbox">
+                                 <input type="text" class="form-control custom_padding_searchbox" value="" placeholder="Search" style="background-color:transparent;color:#fff;">
+                                 <span class="input-group-addon" style="background-color:transparent;border: 1px solid #ccc;color: white;">SEARCH</span>
+                              </div>
+                           </div>
+                        </div>
+                     </form> -->
+                  </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="img/slider/fullscreen2.jpg" class="slide_bg" alt="" />
+                                                <div class="container absolute_container dark_bg">
+                                                    <div class="bg_title">
+                                                       <div class="caption_container">
+														<ul class="categories">
+														<li ><a class="art categories" ng-click="getRolewiseData('Art And Photography');"  href="javascript:void(0)">Art & Photography</a></li>
+														<li ><a class="writing categories" ng-click="getRolewiseData('Writer');" href="javascript:void(0)">Writing</a></li>
+														<li ><a class="fashion1 categories" ng-click="getRolewiseData('Fashion');" href="javascript:void(0)">Fashion</a></li>
+														<li ><a class="shortfilm categories" ng-click="getRolewiseData('Short Films');" href="javascript:void(0)">Shortfilm</a></li>
+														</ul>
+                     <div class="social_icons"></div>
+                     <div class="caption_text_slider">CONNECT PEOPLE TO WORK</div>
+					 <div class="container">
+					  <div class="col-md-12"><button type="button" data-toggle="modal" data-target="#login" class="btn btn-info login_btn">Login</button><button type="button" class="btn btn-info register_btn" data-toggle="modal" data-target="#register">Register</button></div>
+					 </div>
+                    <!--  <form class="caption_searchbox ng-pristine ng-valid">
+                        <div>
+                           <div>
+                              <div class="input-group col-md-12 custom_margin_inputbox">
+                                 <input type="text" class="form-control custom_padding_searchbox" value="" placeholder="Search" style="background-color:transparent;color:#fff;">
+                                 <span class="input-group-addon" style="background-color:transparent;border: 1px solid #ccc;color: white;">SEARCH</span>
+                              </div>
+                           </div>
+                        </div>
+                     </form> -->
+                  </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="img/slider/fullscreen3.jpg" class="slide_bg" alt="" />
+                                                <div class="container absolute_container dark_bg">
+                                                    <div class="bg_title">
+                                                       <div class="caption_container">
+														<ul class="categories">
+														<li ><a class="art categories" ng-click="getRolewiseData('Art And Photography');"  href="javascript:void(0)">Art & Photography</a></li>
+														<li ><a class="writing categories" ng-click="getRolewiseData('Writer');" href="javascript:void(0)">Writing</a></li>
+														<li ><a class="fashion1 categories" ng-click="getRolewiseData('Fashion');" href="javascript:void(0)">Fashion</a></li>
+														<li ><a class="shortfilm categories" ng-click="getRolewiseData('Short Films');" href="javascript:void(0)">Shortfilm</a></li>
+														</ul>
+                     <div class="social_icons"></div>
+                     <div class="caption_text_slider">CONNECT PEOPLE TO WORK</div>
+					 <div class="container">
+					  <div class="col-md-12"><button type="button" data-toggle="modal" data-target="#login" class="btn btn-info login_btn">Login</button><button type="button" class="btn btn-info register_btn" data-toggle="modal" data-target="#register">Register</button></div>
+					 </div>
+                    <!--  <form class="caption_searchbox ng-pristine ng-valid">
+                        <div>
+                           <div>
+                              <div class="input-group col-md-12 custom_margin_inputbox">
+                                 <input type="text" class="form-control custom_padding_searchbox" value="" placeholder="Search" style="background-color:transparent;color:#fff;">
+                                 <span class="input-group-addon" style="background-color:transparent;border: 1px solid #ccc;color: white;">SEARCH</span>
+                              </div>
+                           </div>
+                        </div>
+                     </form> -->
+                  </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+											 <li>
+                                                <img src="img/slider/fashion.jpg" class="slide_bg" alt="" />
+                                                <div class="container absolute_container dark_bg">
+                                                    <div class="bg_title">
+                                                        <div class="caption_container">
+														<ul class="categories">
+														<li ><a class="art categories" ng-click="getRolewiseData('Art And Photography');"  href="javascript:void(0)">Art & Photography</a></li>
+														<li ><a class="writing categories" ng-click="getRolewiseData('Writer');" href="javascript:void(0)">Writing</a></li>
+														<li ><a class="fashion1 categories" ng-click="getRolewiseData('Fashion');" href="javascript:void(0)">Fashion</a></li>
+														<li ><a class="shortfilm categories" ng-click="getRolewiseData('Short Films');" href="javascript:void(0)">Shortfilm</a></li>
+														</ul>
+                     <div class="social_icons"></div>
+                     <div class="caption_text_slider">CONNECT PEOPLE TO WORK</div>
+					 <div class="container">
+					 <div class="col-md-12"><button type="button" data-toggle="modal" data-target="#login" class="btn btn-info login_btn">Login</button><button type="button" class="btn btn-info register_btn" data-toggle="modal" data-target="#register">Register</button></div>
+					 </div>
+                    <!--  <form class="caption_searchbox ng-pristine ng-valid">
+                        <div>
+                           <div>
+                              <div class="input-group col-md-12 custom_margin_inputbox">
+                                 <input type="text" class="form-control custom_padding_searchbox" value="" placeholder="Search" style="background-color:transparent;color:#fff;">
+                                 <span class="input-group-addon" style="background-color:transparent;border: 1px solid #ccc;color: white;">SEARCH</span>
+                              </div>
+                           </div>
+                        </div>
+                     </form> -->
+                  </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="row">
+                                <div class="col-sm-12 module_cont pb43">
+                                    <div class="bg_title">
+											
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="row">
+                                <div class="col-sm-12 module_cont pb43">
+                                    <div class="bg_title">
+                                        <h3>ART & PHOTOGRAPHY</h3>
+										<hr class="heading_underline">
+                                        <p>Ut sed mauris sem. Proin tempor felis ipsum, vel sagittis leo suscipit eget. Fusce dignissim<br>aliquet libero eu pretium. Pellentesque sit amet dolor mollis, dignissim massa non, efficitur.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+<!--                             <input ng-model="abc" type="text"> -->
+<!-- {{abc}} -->
+                                <div class="col-sm-12 module_cont pb60">
+                                    <div class="sorting_block list-of-images image-grid items3" id="list">
+
+                                        <div class="portfolio_item element fashion portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\photography1.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Baby Photography</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Photography</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\photography2.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Girl & Boy With Car</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Photography</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element portrait nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\photography3.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Bird</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Portrait</a><a href="javascript:void(0);">Nature</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\photography4.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Camera</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Photography</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\photography5.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Sqirrel With Camera</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Photography</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element fashion nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\painting1.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Ship</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Painting</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                    <img src="img\art&photography\painting2.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Nature</a>
+                                                        </div>
+                                                        <a href="javascript:void(0);">Painting</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+										 <div class="portfolio_item element fashion nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                   <img src="img\art&photography\painting3.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Girl</a>
+                                                        </div>
+														<a href="javascript:void(0);">Painting</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+										
+                                        <div class="portfolio_item element fashion nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                   <img src="img\art&photography\painting5.png" alt="">
+                                                    <span class="gallery_overlay"></span>
+                                                    <a href="portfolio_post_right_sidebar.htm" class="item_link">View Portfolio Post</a>
+                                                    <div class="item_title_block">
+                                                        <div class="item_title">
+                                                            <a href="portfolio_post_right_sidebar.htm">Tree</a>
+                                                        </div>
+														<a href="javascript:void(0);">Painting</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="text-center"><a href="#" class="load_more_works shortcode_button btn_large btn_type1">View more</a></div>
+                                </div>
+                            </div>
+							
+							                            <div class="row">
+                                <div class="col-sm-12 module_cont pb43">
+                                    <div class="bg_title">
+                                        <h3>BOOK GALERY</h3>
+										<hr class="heading_underline">
+                                        <p>Nam nisl lectus, consequat in mi at, molestie lacinia sem. Curabitur nisi libero, tincidunt ut<br>sagittis et, pretium eget sapien. In pulvinar posuere facilisis. Maecenas in tortor eget nunc.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 module_cont module_team pb80">
+                                    <ul class="item_list">
+                                        <li>
+                                            <div class="team_item_wrap">
+                                                <div class="team_img">
+                                                    <img src="img/books/book1.jpg" alt="" />
+                                                    <div class="hover_team_container">
+														<h6>Sumit Chakraberty</h6>
+													    <h6>Master Blaster</h6>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                        <div class="team_icons_wrapper">
+                                                            <a href="javascript:void(0);" title="Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Pinterest"><i class="fa fa-pinterest-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="team_title">
+												    <h6>Sumit Chakraberty</h6>
+                                                    <h6>Master Blaster</h6>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                </div>
+                                                <div class="team_title_holder"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="team_item_wrap">
+                                                <div class="team_img">
+                                                    <img src="img/books/book2.jpg" alt="" />
+                                                    <div class="hover_team_container">
+                                                        <h6>Narendra Modi</h6>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                        <div class="team_icons_wrapper">
+                                                            <a href="javascript:void(0);" title="Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Pinterest"><i class="fa fa-pinterest-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="team_title">
+												<h6>A Political Boigraphy</h6>
+                                                    <h6>Narendra Modi</h6>
+														
+                                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                </div>
+                                                <div class="team_title_holder"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="team_item_wrap">
+                                                <div class="team_img">
+                                                    <img src="img/books/book3.jpg" alt="" />
+                                                    <div class="hover_team_container">
+													  <h6>You Can Win</h6>
+															<h6>Shiv Khera</h6>
+                                                      
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                        <div class="team_icons_wrapper">
+                                                            <a href="javascript:void(0);" title="Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Pinterest"><i class="fa fa-pinterest-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="team_title">
+												  <h6>You Can Win</h6>
+												<h6>Shiv Khera</h6>
+                                                    
+                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                </div>
+                                                <div class="team_title_holder"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="team_item_wrap">
+                                                <div class="team_img">
+                                                    <img src="img/books/book4.jpg" alt="" />
+                                                    <div class="hover_team_container">
+													 <h6>Swaraj</h6>
+                                                        <h6>Arvind Kejriwal</h6>
+                                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                        <div class="team_icons_wrapper">
+                                                            <a href="javascript:void(0);" title="Facebook"><i class="fa fa-facebook-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Pinterest"><i class="fa fa-pinterest-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+                                                            <a href="javascript:void(0);" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="team_title">
+												 <h6>Swaraj</h6>
+                                                    <h6>Arvind Kejriwal</h6>
+                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. </p>
+                                                </div>
+                                                <div class="team_title_holder"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+							
+							
+                            <div class="row">
+                                <div class="col-sm-12 module_cont pb43">
+                                    <div class="bg_title">
+                                        <h3 >VIDEO GALLERY</h3>
+										<hr class="heading_underline">
+                                        <p>Ut sed mauris sem. Proin tempor felis ipsum, vel sagittis leo suscipit eget. Fusce dignissim<br>aliquet libero eu pretium. Pellentesque sit amet dolor mollis, dignissim massa non, efficitur.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 module_cont pb60">
+                                    <div class="sorting_block list-of-images image-grid items3" id="list">
+
+                                        <div class="portfolio_item element fashion portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element portrait nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element fashion nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="portfolio_item element cities portrait">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+										 <div class="portfolio_item element fashion nature">
+                                            <div class="item_padding">
+                                               <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+										
+                                        <div class="portfolio_item element fashion nature">
+                                            <div class="item_padding">
+                                                <div class="img_block">
+                                                     <video width="320" height="240" controls="">
+														  <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+														  <source src="movie.ogg" type="video/ogg">
+														Your browser does not support the video tag.
+														</video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="text-center"><a href="#" class="load_more_works shortcode_button btn_large btn_type1">View more</a></div>
+                                </div>
+                            </div>
+							
+                            <div class="row info_module">
+                                <div class="col-sm-4 module_cont">
+                                    <a href="javascript:void(0);">
+                                        <img src="img/imgs/info_module1.jpg" alt="" />
+                                        <h5>Fashion Photography</h5>
+                                        <p>It isn’t a question of enhancement through design. Whether an editor realizes it or not, design is part of what he does every time he prints the paper.</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4 module_cont">
+                                    <a href="javascript:void(0);">
+                                        <img src="img/imgs/info_module2.jpg" alt="" />
+                                        <h5>Lifestyle Photography</h5>
+                                        <p>Design is how you treat your customers. If you treat them well from an environmental, emotional, and aesthetic standpoint, you’re doing good design.</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4 module_cont">
+                                    <a href="javascript:void(0);">
+                                        <img src="img/imgs/info_module3.jpg" alt="" />
+                                        <h5>Nature photography</h5>
+                                        <p>Creativity often consists of merely turning up what is already there. Did you know that right and left shoes were thought up only a little more than a century ago?</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                  <!--           <div class="fw_block wall_wrap gt3_info_section grey_bg mb74">
+                                <div class="row">
+                                    <div class="col-sm-6 module_cont">
+                                        <div class="info_text font_style_normal">
+                                            <h6>about us</h6>
+                                            <div class="info pt190 pb190">
+                                                <h1 class="mb30">burning with the idea</h1>
+                                                <p>MYARTVILLA - a creative lifestyle photo studio making emotional photography communicate a story. Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of other's opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</p>
+                                                <p>You have to be burning with an idea, or a problem, or a wrong that you want to right. If you're not passionate enough from the start, you'll never stick it out. If you live each day as it was your last, someday you'll most certainly be right. Sed porta aliquam nulla sit amet iaculis. Quisque at mattis diam. Duis porttitor ultrices ligula. Ut et consequat mi. Quisque malesuada neque at maximus viverra. Nam leo lorem, scelerisque eu sem in, laoreet facilisis velit. Cras vel ex eu ex interdum luctus.</p>
+                                            </div>
+                                            <a href="javascript:void(0);" class="learn_more">read the story</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 module_cont">
+                                        <div class="single_image">
+                                            <img src="img/imgs/home1_1.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+ -->
+<!-- 
+
+                            <div class="fw_block wall_wrap gt3_info_section grey_bg mb74">
+                                <div class="row">
+                                    <div class="col-lg-6 module_cont">
+                                        <div class="single_image">
+                                            <img src="img/imgs/home1_2.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 module_cont">
+                                        <div class="module_iconboxes_grid items2 margin80">
+                                            <div class="module_content shortcode_iconbox first">
+                                                <a href="javascript:void(0);">
+                                                    <div class="iconbox_wrapper">
+                                                        <div class="ico"><img src="img/icons/services_icon1.png" width="32" height="32" alt="" /></div>
+                                                        <div class="icon_title_wrap">
+                                                            <h5 class="iconbox_title">Photography</h5>
+                                                        </div>
+                                                        <div class="iconbox_body">
+                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="module_content shortcode_iconbox second">
+                                                <a href="javascript:void(0);">
+                                                    <div class="iconbox_wrapper">
+                                                        <div class="ico"><img src="img/icons/services_icon2.png" width="32" height="32" alt="" /></div>
+                                                        <div class="icon_title_wrap">
+                                                            <h5 class="iconbox_title">Branding</h5>
+                                                        </div>
+                                                        <div class="iconbox_body">
+                                                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequ magni dolores eos qui ratione voluptatem sequ.</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="module_content shortcode_iconbox third">
+                                                <a href="javascript:void(0);">
+                                                    <div class="iconbox_wrapper">
+                                                        <div class="ico"><img src="img/icons/services_icon3.png" width="32" height="32" alt="" /></div>
+                                                        <div class="icon_title_wrap">
+                                                            <h5 class="iconbox_title">Movies</h5>
+                                                        </div>
+                                                        <div class="iconbox_body">
+                                                            <p>Fusce interdum mauris sit amet felis dictum, quis sagittis ex pulvinar. Ut in lectus sapien. Morbi leo magna, semper a ligula ac, tempus.</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="module_content shortcode_iconbox fourth">
+                                                <a href="javascript:void(0);">
+                                                    <div class="iconbox_wrapper">
+                                                        <div class="ico"><img src="img/icons/services_icon4.png" width="32" height="32" alt="" /></div>
+                                                        <div class="icon_title_wrap">
+                                                            <h5 class="iconbox_title">Marketing</h5>
+                                                        </div>
+                                                        <div class="iconbox_body">
+                                                            <p>Etiam sollicitudin justo in tempus lobortis. Inte at nisl risus. Lorem ipsum dolor sit amet, conse adipiscing elit. Ut tortor sem, suscipit nec ultric.</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+
+                 
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- Instagram -->
+  <!--   <div class="instagram_module_title">
+        <h4>Follow us on instagram</h4>
+    </div> -->
+    <!-- <div id="instagram_module"></div> -->
+    <!-- //Instagram -->
+    
+
+</div>
+
+
+
+
+	<!--Modal for Login & Register-->
+	<div class="container">
+ 
+  <!-- Modal -->
+  <div class="container" ng-controller="registercontroller">
+		  <div class="modal fade" id="register" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close"  data-dismiss="modal">×</button>
+		          <h4><span class="glyphicon glyphicon-lock"></span> Register</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" novalidate="" name="Registerform">
+			        <div class="form-group" ng-show="error1">
+						<div class="alert alert-danger">
+							 <strong>Error!</strong> {{error1}}
+						</div>
+					</div>
+			        <div class="alert alert-success" ng-show="sucess1">
+					  <strong>Success!</strong> {{sucess1}}
+					</div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.user_name.$invalid && !Registerform.user_name.$pristine }">
+		              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="usrname" 
+		              	name="user_name" 
+		              	ng-model="user1.user_name"
+		              	placeholder="Enter username"
+		              	required
+		              >
+		             <p ng-show="Registerform.user_name.$invalid && !Registerform.user_name.$pristine"
+							class="help-block">Username is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.firstname.$invalid && !Registerform.firstname.$pristine }">
+		              <label for="firstname"><span class="glyphicon glyphicon-user"></span> Firstname</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="firstname" 
+		              	name="firstname" 
+		              	ng-model="user1.firstname"
+		              	placeholder="Enter firstname"
+		              	required
+		              >
+		             <p ng-show="Registerform.firstname.$invalid && !Registerform.firstname.$pristine"
+							class="help-block">Firstname is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.lastname.$invalid && !Registerform.lastname.$pristine }">
+		              <label for="lstname"><span class="glyphicon glyphicon-user"></span> Lastname</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="lastname" 
+		              	name="lastname" 
+		              	ng-model="user1.lastname"
+		              	placeholder="Enter lastname"
+		              	required
+		              >
+		             <p ng-show="Registerform.lastname.$invalid && !Registerform.lastname.$pristine"
+							class="help-block">Lastname is required
+					</p>
+		            </div>
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.email.$invalid && !Registerform.email.$pristine }">
+		              <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+		              <input 
+		              	type="email" 
+		              	class="form-control" 
+		              	id="email"
+		              	name="email"
+		              	ng-model="user1.email"
+		              	ng-pattern="email_pattern" 
+		              	placeholder="Enter Email"
+		              	required
+		              >
+		              <p  ng-show="Registerform.email.$invalid && !Registerform.email.$pristine && Registerform.email.$error.pattern"
+							class="help-block">Email should be in proper format.
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.Password.$invalid && !Registerform.Password.$pristine }">
+		              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="psw" 
+		              	name="password"
+		              	ng-model="user1.password"
+		              	placeholder="Enter password"
+		              	required
+		              >
+		             <p ng-show="Registerform.password.$invalid && !Registerform.password.$pristine"
+							class="help-block">Password is required
+					</p>
+		            </div>
+		            
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.confirm_password.$invalid && !Registerform.confirm_password.$pristine }">
+		              <label for="confirmpsw"><span class="glyphicon glyphicon-eye-open"></span>Confirm Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="confirmpsw"
+		              	name="confirm_password"
+		              	ng-model="user1.confirm_password" 
+		              	placeholder="Enter Confirm password"
+		              	required
+		              >
+		            <p ng-show="Registerform.confirm_password.$invalid && !Registerform.confirm_password.$pristine"
+							class="help-block">Confirm Password is required
+					</p>
+		            </div>
+		             <div  class="form-group" ng-class="{ 'has-error' : Registerform.role.$invalid && !Registerform.role.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Choose Role</label>
+		              <select ng-model="user1.role" class="form-control" >
+		              	<option>Art And Photography</option>
+		              	<option>Writer</option>
+		              	<option>Fashion</option>
+		              	<option>Publisher</option>
+		              	<option>Editor</option>
+		              	<option>Cover Designer</option>
+		              	<option>Layout Designer</option>
+		              	<option>Short Films</option>
+		              </select>
+		            <p ng-show="Registerform.role.$invalid && !Registerform.role.$pristine"
+							class="help-block">Role is required
+					</p>
+		            </div>
+		             <div ng-show="guest_role" class="form-group" ng-class="{ 'has-error' : Registerform.role.$invalid && !Registerform.role.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Choose Role</label>
+		              <select ng-model="user1.role" class="form-control" >
+		              	<option>Guest</option>
+		              </select>
+		            <p ng-show="Registerform.role.$invalid && !Registerform.role.$pristine"
+							class="help-block">Role is required
+					</p>
+		            </div>
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.contact_no.$invalid && !Registerform.contact_no.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Mobile Number</label>
+		              <input 
+		              	type="number" 
+		              	class="form-control" 
+		              	ng-maxlength = "10"
+		              	ng-minlength = "10"
+		              	id="mobile" 
+		              	name="contact_no"
+		              	ng-model="user1.contact_no"
+		              	placeholder="Enter Mobile Number"
+		              	required
+		              >
+		            <p ng-show="Registerform.contact_no.$error.required && !Registerform.contact_no.$pristine"
+							class="help-block">Mobile No is required
+					</p>
+		            <p ng-show="Registerform.contact_no.$error.maxlength && !Registerform.contact_no.$pristine"
+							class="help-block">Minimum 10 digits allowed.
+					</p>
+		            <p ng-show="Registerform.contact_no.$error.minlength && !Registerform.contact_no.$pristine"
+							class="help-block">Minimun 10 digits allowed.
+					</p>
+		            </div>
+		              <button 
+		              	ng-click="register_user(user1)" 
+		              	ng-disabled="Registerform.$invalid"
+		              	type="submit" class="btn btn-success btn-block"
+		              >
+		              	<span class="glyphicon glyphicon-off"></span>Register
+		              </button>
+		          </form>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div> 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="login" role="dialog" ng-controller="logincontroller">
+   <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close" data-dismiss="modal">×</button>
+		          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" novalidate="" name="Loginform">
+		           <div class="form-group" ng-show="error">
+						<div class="alert alert-danger">
+							 <strong>Error!</strong> {{error}}
+						</div>
+					</div>
+			        <div class="alert alert-success" ng-show="sucess">
+					  <strong>Success!</strong> {{sucess}}
+					</div>
+		            <div class="form-group" ng-class="{ 'has-error' : Loginform.user_name.$invalid && !Loginform.user_name.$pristine }">
+		              <label for="user_name"><span class="glyphicon glyphicon-user"></span> Username</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="user_name" 
+		              	name="user_name"
+		              	ng-model="user.user_name"
+		              	placeholder="Enter Username"
+		              	required
+		              >
+		            <p ng-show="Loginform.user_name.$invalid && !Loginform.user_name.$pristine"
+							class="help-block">Username is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Loginform.password.$invalid && !Loginform.password.$pristine }">
+		              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="password" 
+		              	name="password"
+		              	ng-model="user.password"
+		              	placeholder="Enter password"
+		              	required
+		              >
+		            <p ng-show="Loginform.password.$invalid && !Loginform.password.$pristine"
+							class="help-block">Password is required
+					</p>
+		            </div>
+		            <div class="checkbox">
+		              <label><input type="checkbox" value="" checked="">Remember me</label>
+		            </div>
+		              <button 
+		              	type="submit" 
+		              	class="btn btn-success btn-block"
+		              	ng-click="login_user(user)"
+		              	ng-disabled="Loginform.$invalid"
+		              >
+		              	<span class="glyphicon glyphicon-off"></span> Login
+		              </button>
+		          </form>
+		        </div>
+		        <div class="modal-footer">
+		          <button 
+		          	type="submit" 
+		          	class="btn btn-danger btn-default pull-left" 
+		          	data-dismiss="modal"
+		          >
+		          	<span class="glyphicon glyphicon-remove"></span> Cancel
+		          </button>
+		          <p>Not a member? <a href="#">Sign Up</a></p>
+		          <p>Forgot <a href="#">Password?</a></p>
+		        </div>
+		      
+		    </div>
+		  </div> 
+  </div> 
+	<!--Modal for Login-->
+  
+  
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <div class="footer">
+    	<div class="pre_footer">
+        	<div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="sidepanel widget_gt3_contacts">
+                            <h6 class="title">Contact Info</h6>
+                            <div class="widget_contacts">
+                                <div class="widget_contacts_block">
+                                    <div class="widget_contacts_name">Address:</div>
+                                    <div class="widget_contacts_value">121 King Street, Melbourne Victoria 3000</div>
+                                </div>
+                                <div class="widget_contacts_block">
+                                    <div class="widget_contacts_name">Phone:</div>
+                                    <div class="widget_contacts_value">
+                                        +1 (800) 456 37 96 - Office
+                                    </div>
+                                </div>
+                                <div class="widget_contacts_block">
+                                    <div class="widget_contacts_name">Email:</div>
+                                    <div class="widget_contacts_value"><a href="mailto:#">email@gt3themes.com</a></div>
+                                </div>
+                                <div class="widget_contacts_block">
+                                    <div class="widget_contacts_name">Follow Us:</div>
+                                    <div class="widget_contacts_value">
+                                        <ul class="social_icons">
+                                            <li><a title="Facebook" href="javascript:void(0);"><i class="fa fa-facebook-square"></i></a></li>
+                                            <li><a title="Pinterest" href="javascript:void(0);"><i class="fa fa-pinterest-square"></i></a></li>
+                                            <li><a title="Twitter" href="javascript:void(0);"><i class="fa fa-twitter-square"></i></a></li>
+                                            <li><a title="Google+" href="javascript:void(0);"><i class="fa fa-google-plus-square"></i></a></li>
+                                            <li><a title="Behance" href="javascript:void(0);"><i class="fa fa-behance-square"></i></a></li>
+                                            <li><a title="LinkedIn" href="javascript:void(0);"><i class="fa fa-linkedin-square"></i></a></li>
+                                            <li><a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        	
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="sidepanel widget_flickr">
+                            <h6 class="title">Gallery</h6>
+                            <div class="flickr_widget_wrapper"><script src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=t&amp;layout=x&amp;source=user&amp;user=91205275@N03"></script></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="sidepanel widget_posts">
+                            <h6 class="title">Recent Posts</h6>
+                            <ul class="recent_posts">
+                                <li>
+                                    <div class="recent_posts_content">
+                                        <a href="javascript:void(0);">Standard gallery post</a>
+                                        <div class="recent_posts_info">
+                                            <span>June 09, 2020</span>
+                                            <span>by <a href="javascript:void(0);">Author</a></span>
+                                            <span><a href="javascript:void(0);">3 Comments</a></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="recent_posts_content">
+                                        <a href="javascript:void(0);">Post with couple photos inside</a>
+                                        <div class="recent_posts_info">
+                                            <span>June 08, 2020</span>
+                                            <span>by <a href="javascript:void(0);">Author</a></span>
+                                            <span><a href="javascript:void(0);">0 Comments</a></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="recent_posts_content">
+                                        <a href="javascript:void(0);">Smart quote post</a>
+                                        <div class="recent_posts_info">
+                                            <span>June 06, 2020</span>
+                                            <span>by <a href="javascript:void(0);">Author</a></span>
+                                            <span><a href="javascript:void(0);">2 Comments</a></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="sidepanel widget_text">
+                            <h6 class="title">Newsletter signup</h6>
+                            <div class="textwidget">
+                                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudian.</p>
+                                <form id="mc_signup_form" action="javascript:void(0);" method="post">
+                                    <input type="text" placeholder="Your Email" value="" name="signup">
+                                    <div class="submit_wrap"><input type="submit" value="Subscribe" /></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer_bottom">
+        	<div class="container">
+                <div class="copyright">Copyright &copy; 2020 MYARTVILLA. All Rights Reserved.</div>
+               
+                <div class="clear"></div>
+        	</div>
+        </div>
+    </div>
+
+    <!-- SideArea -->
+    <div class="sidebar_area">
+        <div class="sidebar_area_head">
+            <div class="logo_sect">
+                <a href="index.html" class="logo">
+                    <!-- <img src="img/logo_white_retina.png" alt="" /> -->
+					<h2 style="color:#fff;">MYARTVILLA LOGO</h2>
+                </a>
+            </div>
+            <div class="close_sidebar_area"></div>
+        </div>
+        <div class="scroll_pane_wrap">
+
+            <div class="sidepanel widget_flickr">
+                <div class="flickr_widget_wrapper"><script src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=m&amp;layout=x&amp;source=user&amp;user=91205275@N03"></script></div>
+            </div>
+
+            <div class="sidepanel widget_text">
+                <h6 class="title">About Us</h6>
+                <div class="textwidget">
+                    <p>Vestibulum interdum laoreet risus, id rutrum libero. Ut nec condim lacus. Praesent sollicitudin nibh nisl, at finibus tortor placerat nec. Pellentesque sed magna ac nibh sagittis facilisis. Quisque in odio sit amet erat tempor ornare iaculis eget lacus. Praesent hendrerit elit vitae lorem iaculis posuere.</p>
+                </div>
+            </div>
+
+            <div class="sidepanel widget_gt3_contacts">
+                <h6 class="title">Contact Info</h6>
+                <div class="widget_contacts">
+                    <div class="widget_contacts_block">
+                        <div class="widget_contacts_name">Address:</div>
+                        <div class="widget_contacts_value">Kothrud,Pune,Maharashtra.</div>
+                    </div>
+                    <div class="widget_contacts_block">
+                        <div class="widget_contacts_name">Phone:</div>
+                        <div class="widget_contacts_value">
+                            +1 (800) 456 37 96 - Office
+                        </div>
+                    </div>
+                    <div class="widget_contacts_block">
+                        <div class="widget_contacts_name">Email:</div>
+                        <div class="widget_contacts_value"><a href="mailto:#">email@myartvilla.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidepanel widget_text">
+                <h6 class="title">Follow &amp; share</h6>
+                <div class="textwidget">
+                    <ul class="social_icons">
+                        <li><a title="Facebook" href="javascript:void(0);"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a title="Pinterest" href="javascript:void(0);"><i class="fa fa-pinterest-square"></i></a></li>
+                        <li><a title="Twitter" href="javascript:void(0);"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a title="Google+" href="javascript:void(0);"><i class="fa fa-google-plus-square"></i></a></li>
+                        <li><a title="Behance" href="javascript:void(0);"><i class="fa fa-behance-square"></i></a></li>
+                        <li><a title="LinkedIn" href="javascript:void(0);"><i class="fa fa-linkedin-square"></i></a></li>
+                        <li><a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright"><span>Copyright &copy; 2020 MYARTVILLA. All Rights Reserved.</span></div>
+    </div>
+    <!-- //SideArea -->
+
+    <a href="#" class="back2top" title="Back To Top">Back to Top</a>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script src="./assets/js/angular.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js"></script>
+     <script src="../assets/angular-rating/src/angular-rating.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/modules.js"></script>
+	<script type="text/javascript" src="./js/theme.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="./js/sorting.js"></script>
+    
+	<script src="app/app.js"></script>
+	<script src="controller/register/register.js"></script>
+	<script src="controller/login/login.js"></script>
+	<script src="controller/Index/IndexDashboardcontroller.js"></script>
+    
+		
+    <script>
+        items_set = [
+            {src : 'img/art&photography/painting6.png', url : 'portfolio_post_right_sidebar.html', title: 'Congue ipsum morbi', category: '<a href="javascript:void(0);">Fashion</a><a href="javascript:void(0);">Stuff</a>', sortcategory: 'fashion stuff'},
+            {src : 'img/art&photography/painting7.png', url : 'portfolio_post_right_sidebar.html', title: 'Rhoncus pellentesque', category: '<a href="javascript:void(0);">Nature</a><a href="javascript:void(0);">Stuff</a>', sortcategory: 'nature stuff'},
+            {src : 'img/art&photography/photography6.png', url : 'portfolio_post_right_sidebar.html', title: 'Condimentum hendrerit', category: '<a href="javascript:void(0);">Fashion</a>', sortcategory: 'fashion'}
+        ];
+        jQuery('#list').portfolio_addon({
+            type : 4, // Portfolio 2-4 Columns
+            load_count : 3,
+            items : items_set
+        });
+
+        jQuery(document).ready(function() {
+            "use strict";
+            // Testimonials
+            if (jQuery('.testimonial_wrapper').size() > 0) {
+                // Info
+                jQuery('.testimonials-info').slick({
+                    fade: true,
+                    arrows: false,
+                    dots: false,
+                    asNavFor: '.testimonials-nav',
+                    adaptiveHeight: true
+                });
+                // Navigation
+                jQuery('.testimonials-nav').slick({
+                    slidesToShow: 1,
+                    asNavFor: '.testimonials-info',
+                    centerMode: true,
+                    centerPadding: 0,
+                    focusOnSelect: true,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    speed: 600,
+                    arrows: false,
+                    dots: false,
+                    variableWidth: true,
+                    infinite: true
+                });
+            }
+
+            // Team
+            if (jQuery('.module_team').size() > 0) {
+                jQuery('.module_team .item_list').slick({
+                    slidesToShow: 3,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: false,
+                    dots: true,
+                    focusOnSelect: true,
+                    responsive: [
+                        {
+                            breakpoint: 767,
+                            settings: {
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                });
+                // Hover
+                jQuery('.team_item_wrap').each(function () {
+                    var team_title_h = jQuery(this).find('.team_title').height();
+                    var team_hover_area_h = jQuery(this).find('.hover_team_container');
+
+                    jQuery(this).find('.team_title_holder').height(team_title_h);
+                    team_hover_area_h.css({'bottom': - team_hover_area_h.height() + 'px'});
+
+                    jQuery(this).find('.team_img').mouseenter(function(){
+                        jQuery(this).parent().addClass('active_item');
+                        jQuery('.active_item .team_title').css({'bottom': team_title_h + 'px'});
+                        jQuery('.active_item .hover_team_container').css({'bottom': 0});
+                    }).mouseleave(function(){
+                        jQuery(this).parent().removeClass('active_item');
+                        jQuery('.team_title').css({'bottom': 0});
+                        jQuery('.hover_team_container').css({'bottom': - team_hover_area_h.height() + 'px'});
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

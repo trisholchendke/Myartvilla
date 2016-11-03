@@ -1,0 +1,249 @@
+<style>
+	#getFile {
+  display: none;
+}
+#getFileLabel {
+  display: inline-block;
+}
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Edit Profile</h4>
+                    <p class="category">Complete your profile</p>
+                </div>
+                <div class="card-content">
+                    <form novalidate="" name="UpdateProfileform">
+                        <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.user_name.$invalid && !UpdateProfileform.user_name.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label>Username</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control" 
+                                    	name="user_name"
+                                    	ng-model="user_profile.user_name"
+                                    	required
+                                    	readonly
+                                    >
+			                    <p ng-show="UpdateProfileform.user_name.$invalid && !UpdateProfileform.user_name.$pristine"
+										class="help-block">Username is required
+								</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label >Email Address</label>
+                                    <input 
+                                    	type="email" 
+                                    	name="email"
+                                    	ng-model="user_profile.email" 
+                                    	class="form-control"
+                                    	ng-pattern="email_pattern"
+                                    	required
+                                    >
+                                   <p  ng-show="UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine && UpdateProfileform.email.$error.pattern"
+										class="help-block">Email should be in proper format.
+									</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label >First Name</label>
+                                    <input 
+                                    	type="text" 
+                                    	name="firstname" 
+                                    	ng-model="user_profile.firstname" 
+                                    	class="form-control"
+                                    >
+                                    <p  ng-show="UpdateProfileform.firstname.$invalid && !UpdateProfileform.firstname.$pristine"
+										class="help-block">First Name is required
+									</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.lastname.$invalid && !UpdateProfileform.lastname.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label>Last Name</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="user_profile.lastname" 
+                                    	class="form-control"
+                                    	name="lastname"
+                                    	required
+                                    >
+                                    <p  ng-show="UpdateProfileform.lastname.$invalid && !UpdateProfileform.lastname.$pristine"
+										class="help-block">Last Name is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                         <div class="col-md-12">
+                                <div class="form-group label-floating">
+                                    <label >Contact No</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control DateFrom"
+                                    	name="dob"
+                                    	value={{user_profile.contact_no}}
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                         	<div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.price.$invalid && !UpdateProfileform.price.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label >Price</label>
+                                    <input 
+                                    	type="number" 
+                                    	ng-model="user_profile.price" 
+                                    	class="form-control"
+                                    	name="price"
+                                    	required
+                                    >
+                                    <p  ng-show="UpdateProfileform.price.$invalid && !UpdateProfileform.price.$pristine"
+										class="help-block">Price is required
+									</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.address.$invalid && !UpdateProfileform.address.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label >Address</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="user_profile.address" 
+                                    	class="form-control"
+                                    	name="address"
+                                    	required
+                                    >
+                                    <p  ng-show="UpdateProfileform.address.$invalid && !UpdateProfileform.address.$pristine"
+										class="help-block">Address is required
+									</p>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                         <div class="col-md-4">
+                                <div class="form-group label-floating">
+                                    <label >Facebook Link</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="user_profile.fb_link" 
+                                    	class="form-control"
+                                    	name="fb_link"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group label-floating">
+                                    <label >Twitter Link</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="user_profile.twt_link" 
+                                    	class="form-control"
+                                    	name="twt_link"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group label-floating">
+                                    <label >LinkedIn Link</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="user_profile.li_link" 
+                                    	class="form-control"
+                                    	name="li_link"
+                                    >
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{ 'has-error' : UpdateProfileform.about_me.$invalid && !UpdateProfileform.about_me.$pristine }">
+                                <div class="form-group">
+                                    <label>About Me</label>
+                                    <div class="form-group label-floating">
+                                        <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	ng-model="user_profile.about_me"
+                                    	name="about_me"
+                                    	required
+                                    >
+                             <p  ng-show="UpdateProfileform.about_me.$invalid && !UpdateProfileform.about_me.$pristine"
+										class="help-block">Please describe youself.
+									</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-12">
+                                <div class="form-group label-floating">
+                                    <label >Upload Your Work File</label>
+                                    <input 
+											id="input-20" 
+											type="file"
+											class="form-control" 
+											ng-model="post.document1" 
+											valid-file 
+											onchange="angular.element(this).scope().onworkupload(this)"
+											required
+									>
+                                </div>
+                            </div>
+                        
+                        <div ng-if="sucess_message" class="alert alert-success">
+							  <strong>{{sucess}}</strong> {{sucess_message}}
+						</div>
+						<button 
+                        	type="submit" 
+                        	class="btn btn-primary pull-right"
+                        	ng-disabled="UpdateProfileform.$invalid"
+                        	ng-click="modify_profile_details(user_profile)"
+                        	
+                        >Update Profile
+                        </button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+				<div class="card card-profile">
+					<div class="card-avatar">
+					<label id="getFileLabel" for="getFile">
+							<img ng-if="user_profile.profile_pic.length > 0 " class="img" width="130" height="130" src="{{user_profile.profile_pic}}" />
+							<img ng-if="user_profile.profile_pic.length == 0 " class="img" width="130" height="130" src="../assets/img/avatar.png" />
+							<img ng-if="user_profile.profile_pic.length == null " class="img" width="130" height="130" src="../assets/img/avatar.png" />
+					</label>
+						<input type="file" id="getFile" onchange="angular.element(this).scope().onVideoFileChosen(this)" />
+					</div>
+
+					<div class="content">
+					 	<h6 class="category text-gray">{{user_profile.role }}</h6>
+                    	<h4 class="card-title">{{user_profile.firstname}}  {{user_profile.lastname}}</h4>
+						<p class="card-content">
+							{{user_profile.about_me}}
+						</p>
+						<a ng-click="live_now(user_profile)" class="btn btn-primary btn-round">Live Now</a>
+<!-- 						<div class="progress"> -->
+<!-- 							<div class="progress-bar progress-bar-striped active" -->
+<!-- 									role="progressbar" id="bar_video" aria-valuenow="0" -->
+<!-- 									aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div> -->
+<!-- 						</div> -->
+						<button 
+							ng-click="upload_profile_image()"
+							class="btn btn-primary"
+						>SAVE</button>
+					</div>
+				</div>
+		</div>
+    </div>
+</div>

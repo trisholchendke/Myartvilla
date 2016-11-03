@@ -1,0 +1,131 @@
+<style>{{style}}
+	.file-actions{
+	display:none !important;
+	}
+	.btn-file{
+	width:21% !important;
+	}
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Artist Giveaways</h4>
+                </div>
+                <div class="card-content">
+                    <form role="form" novalidate="" name="PostYourWorkform">
+                         <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.theme_name.$invalid && !PostYourWorkform.theme_name.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Theme Name</label>
+							        <input 
+							        	class="form-control" 
+							        	name="theme_name"
+							        	ng-model="post.theme_name"
+                                    	required
+							        >
+									 <p ng-show="PostYourWorkform.theme_name.$invalid && !PostYourWorkform.theme_name.$pristine"
+										class="help-block">Theme Name is required
+									</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.target_audience.$invalid && !PostYourWorkform.target_audience.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Target Audience</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	name="target_audience"
+                                    	ng-model="post.target_audience"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.target_audience.$invalid && !PostYourWorkform.target_audience.$pristine"
+										class="help-block">Theme Audience is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.about_theme.$invalid && !PostYourWorkform.about_theme.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">About Theme</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	name="about_theme"
+                                    	ng-model="post.about_theme"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.about_theme.$invalid && !PostYourWorkform.about_theme.$pristine"
+										class="help-block">About Theme is required
+									</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.theme_prize.$invalid && !PostYourWorkform.theme_prize.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Theme Prize</label>
+                                    <input 
+                                    	type="number"
+                                    	min="0" 
+                                    	class="form-control"
+                                    	name="theme_prize"
+                                    	ng-model="post.theme_prize"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.theme_prize.$invalid && !PostYourWorkform.theme_prize.$pristine"
+										class="help-block">Theme Prize is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{ 'has-error' : PostYourWorkform.theme_description.$invalid && !PostYourWorkform.theme_description.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Theme Description</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	name="theme_description"
+                                    	ng-model="post.theme_description"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.theme_description.$invalid && !PostYourWorkform.theme_description.$pristine"
+										class="help-block">Theme Description is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+	                        <label class="control-label">Select File</label>
+							<input 
+								id="input-20" 
+								type="file"
+								class="form-control" 
+								ng-model="post.document1" 
+								valid-file 
+								onchange="angular.element(this).scope().onVideoFileChosen(this)"
+								required
+							>
+							 <div class="progress">
+							<div class="progress-bar progress-bar-striped active"
+									role="progressbar" id="bar_video" aria-valuenow="0"
+									aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+						</div>
+                        </div>
+                        <button 
+                        	type="submit" 
+                        	class="btn btn-primary pull-right"
+                        	ng-disabled="PostYourWorkform.$invalid"
+                        	ng-click="post_your_theme()"
+                        >Post
+                        </button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

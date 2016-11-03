@@ -1,0 +1,58 @@
+<style>{{style}}
+.file-actions{
+display:none !important;
+}
+.btn-file{
+width:21% !important;
+}
+
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Post Giveaways Answers</h4>
+                </div>
+                <div class="card-content">
+<!--                 <pre>{{answer_sheet | json}}</pre> -->
+	                <form role="form" novalidate=""  name="PostGiveawayform">
+<!--                 	<pre>{{answer_sheet | json}}</pre> -->
+                	<div ng-class="{ 'has-error' : PostGiveawayform.each_answer.question_name.$invalid && !PostGiveawayform.each_answer.question_name.$pristine }">
+                	<div  class="well"  ng-repeat="each_answer in answer_sheet">
+                		<p><b>Question {{$index+1}} ) {{each_answer.question_name}}</b></p>
+                		<textarea 
+                			type="text" 
+                			ng-model="each_answer.answer"
+                			class="form-control"
+                			placeholder="Enter Your Question Here"
+                			height="100%"
+                			width="100%"
+                			name="question_name"
+                			required
+                		> 
+                		</textarea>
+                		 <p ng-show="PostGiveawayform.question_name.$invalid && !PostGiveawayform.question_name.$pristine"
+							class="help-block">Post Main Category is required
+						</p>
+                		<br>
+                		<br>
+                		<button 
+                			class="btn btn-info" 
+                			ng-click="clear_question(each_answer.question_id)"
+                		>Clear Answer {{$index+1}}
+                		</button>
+                	</div>
+                	</div>
+               		<button 
+               			class="btn btn-warning" 
+               			ng-click="final_question_sheet()"
+               			ng-disabled="PostGiveawayform.$invalid"
+               		>Final All Anwers
+               		</button>
+	                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

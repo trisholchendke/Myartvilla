@@ -1,0 +1,179 @@
+<style>
+.img-profile{
+	width:70px !important;
+	height:70px !important;
+	    border-radius: 50%;
+}
+.profile-img{
+	float:left;
+	padding:10px;
+}
+.confirm_buttons{
+	float:right;
+	padding:13px;
+}
+.profile-name{
+	    margin-top: 10px;
+    font-size: 16px;
+    margin-left: -6px;
+    font-weight: 500;
+}
+</style>
+
+<style>
+
+.card-header{
+margin-bottom:15px !important;
+}
+
+
+.profile_img_post {
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 48px !important;
+}.image-post {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+.post_description .img_post {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    height: 400px;
+    display: block;
+    width: 700px;
+}
+.custom_hr_post {
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    border: 0;
+    border-top: 1px solid #eee;
+    width: 100% !important;
+}
+
+.right_padding{
+	padding-right:25px;
+	color: rgb(58, 87, 149);
+}
+.custom_input_padding{
+	padding-bottom:20px;
+}
+.comment_hr{
+	    clear: both;
+}
+	.p_commnts_count{
+	display: inline-block;
+    float: right;
+    margin-right: 10px;
+
+	}
+	.p_comments{
+		 color: #365899;
+		 display: inline-block;
+		 
+	}  
+	.post_desc {
+   
+    text-align: justify;
+    
+}
+	.img_post_comment{
+	float:left;
+	
+}
+.links-post1{
+	padding-left: 15px;
+    padding-bottom: 0px;
+    max-width: 100%;
+    padding-top: 15px;
+}
+.link-post{
+margin-right:10px;
+}
+.comments{
+padding-left:15px;
+}
+.title-post{
+	color: rgb(58, 87, 149);
+	font-weight: bold;
+}
+.caption{
+
+    padding: 33px !important;
+}
+</style>
+
+<div class="content">
+				 
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+	                            <div class="card-header" data-background-color="purple">
+	                                <h4 class="title">GiveAway Result</h4>	                                
+	                            </div>
+	                             
+	                 <div class="col-md-1">
+					 </div>
+					 <div class="col-md-10">
+					<div class="thumbnail thumbnail-post">
+<!-- 					caption starts -->
+						<div class="caption"  ng-repeat="each_works in my_works|reverse">
+							<div class="media">							
+								<div class="media-body">
+								<a class="media-heading title-post" ng-click="getDetails(each_works.send_work_id)" href="javascript:void(0)">{{each_works.post_name|ucfirst}}</a>								
+								</div>
+							</div>
+							<div class="post_description"> 
+								<p class="post_desc">{{each_works.post_description|ucfirst}}</p><p>
+									<a href="{{each_works.file_path}}" download>	
+										<img alt="" ng-if="each_works.file_type == 'application/pdf'" title="" src="./assets/img/pdf.png" class="img_post">
+										<img alt="" ng-if="each_works.file_type == 'image/png'" title="" src="{{each_works.file_path}}" class="img_post">
+										<img alt="" ng-if="each_works.file_type == 'image/jpeg'" title="" src="{{each_works.file_path}}" class="img_post">
+										<img alt="" ng-if="each_works.file_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'" title="" src="./assets/img/docx.png" class="img_post">
+									</a>
+								</p>
+							</div>
+			
+			<table ng-show="each_works.my_works.length != 0" class="table table-bordered table-hover">
+			<tr>
+			<th colspan="2" class="text-center">Contact Details</th>
+			</tr>
+			<tbody ng-repeat="receiver in each_works.my_works">
+			<tr>
+			<th colspan="2" >Service Provider:- {{$index+1}}</th>
+			</tr>
+			 <tr>
+			    
+			  <th>FirstName</th>
+			  <td>{{receiver.receiver_firstname|ucfirst}}</td>
+			     
+			    </tr>
+			    <tr>
+			    
+			  <th>LastName</th>
+			  <td>{{receiver.receiver_lastname|ucfirst}}</td>
+			     
+			    </tr>
+			    <tr ng-show="receiver.accept_status == 1">
+			  <th  >Contact Number</th>
+			      <td>{{receiver.receiver_contact_no}}</td>
+			    </tr>
+			    </tbody>
+			    
+			</table> 
+			
+						</div>
+							        <div class="confirm_buttons">
+								<button type="button" class="btn btn-danger" ng-click="back()">Back</button>
+							</div>
+				</div>
+				</div>
+				<div class="col-md-1">
+					 </div>
+				
+	                        </div>
+	                    </div>
+	                </div>
+   
+	        </div>
+	        

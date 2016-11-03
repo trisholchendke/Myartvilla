@@ -1,0 +1,143 @@
+<style>{{style}}
+.file-actions{
+display:none !important;
+}
+.btn-file{
+width:21% !important;
+}
+
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Post My Works</h4>
+                </div>
+                <div class="card-content">
+                    <form role="form" novalidate="" name="PostYourWorkform">
+                         <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.post_maincategory.$invalid && !PostYourWorkform.post_maincategory.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Category</label>
+							        <select 
+							        	class="form-control" 
+							        	name="post_maincategory"
+							        	ng-change="getSubCategories()"
+							        	ng-model="post.post_maincategory"
+                                    	required
+							        >
+									  <option ng-repeat="category in categories" value="{{category.id}}">
+									    {{category.maincategory}}
+									  </option>
+									</select>
+									 <p ng-show="PostYourWorkform.post_maincategory.$invalid && !PostYourWorkform.post_maincategory.$pristine"
+										class="help-block">Post Main Category is required
+									</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Sub-Category</label>
+                                    <select 
+                                    	class="form-control" 
+                                    	ng-model="post.post_subcategory"
+                                    	name="post_subcategory"
+                                    	required
+                                    >
+                                     <p ng-show="PostYourWorkform.post_subcategory.$invalid && !PostYourWorkform.post_subcategory.$pristine"
+										class="help-block">Post Sub Category is required
+									</p>
+									  <option ng-repeat="subcategory in categories[categoryId1].subCategory" value="{{subcategory}}">
+									    {{subcategory}}
+									  </option>
+									</select>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.country.$invalid && !PostYourWorkform.country.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Select Country</label>
+							       <select 
+							        	class="form-control" 
+							        	name="country"
+							        	ng-model="post.post_country"
+                                    	required
+							        >
+									  <option ng-repeat="country in countries" value="{{country}}">
+									    {{country}}
+									  </option>
+									</select>
+									<p ng-show="PostYourWorkform.country.$invalid && !PostYourWorkform.country.$pristine"
+										class="help-block">Country is required
+									</p>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.post_name.$invalid && !PostYourWorkform.post_name.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Name</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	name="post_name"
+                                    	ng-model="post.post_name"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.post_name.$invalid && !PostYourWorkform.post_name.$pristine"
+										class="help-block">Post Name is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{ 'has-error' : PostYourWorkform.post_description.$invalid && !PostYourWorkform.post_description.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Description</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	name="post_description"
+                                    	ng-model="post.post_description"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.post_description.$invalid && !PostYourWorkform.post_description.$pristine"
+										class="help-block">Post Description is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="row">
+	                        <label class="control-label">Select File</label>
+							<input 
+								id="input-20" 
+								type="file"
+								class="form-control" 
+								ng-model="post.document1" 
+								valid-file 
+								onchange="angular.element(this).scope().onVideoFileChosen(this)"
+								required
+							>
+							 <div class="progress">
+							<div class="progress-bar progress-bar-striped active"
+									role="progressbar" id="bar_video" aria-valuenow="0"
+									aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+						</div>
+                        </div>
+                        <button 
+                        	type="submit" 
+                        	class="btn btn-primary pull-right"
+                        	ng-disabled="PostYourWorkform.$invalid"
+                        	ng-click="post_your_work()"
+                        >Post
+                        </button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

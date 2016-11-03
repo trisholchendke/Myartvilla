@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyartVilla" ng-cloak>
+
+<head>
+		<title>myArtVilla Login</title>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+		<meta name="author" content="">
+		
+		<link rel="icon" type="image/gif/png" href="./assets/img/logo_logo.png">
+		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+		<link href="vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+		<link href="./assets/css/agency.min.css" rel="stylesheet">
+	
+	    <link href="vendor\font-awesome\css\font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	
+		<script src="./assets/js/angular.min.js"></script>
+		<script src="./assets/js/jquery-3.1.0.min.js"></script>
+		<script src="./assets/js/angular-ui-router.min.js"></script>
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<script src="bower_components/angular-base64/angular-base64.js"></script>
+		
+		<script src="app/app.js"></script>
+<!-- 		<script src="app/routes.js"></script> -->
+		<script src="controller/register/register.js"></script>
+		<script src="controller/login/login.js"></script>
+		<style>
+	.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size:20px;
+}
+.rating .filled {
+    color: orangered;
+}
+.clear{
+  margin-top:20px;
+}
+
+</style>
+<style>
+   
+   .fa-3x{
+       font-size: 2.1em; !important;
+   }
+   .share_social{
+   vertical-align: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+   }
+   .rate_Button{
+       margin: 14px 1px !important;
+       margin-left: 14px !important;
+	   padding: 4px 15px !important;
+    font-size: 10px !important;
+   }
+   .rate_this_heading{
+       float: left;
+    color: black;
+    margin-right: 14px;
+    font-size: 17px;
+   }
+      .lead{
+      margin-top: 18px !important;
+      }
+      .social-icons{
+          padding-top: 13px !important;
+    float: right;
+    padding-right: 27px;
+      
+      }
+      .social-icons i{
+      color: #ff7f50 !important;
+      margin-right:10px;
+      }
+      .social:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      }
+      .social {
+      -webkit-transform: scale(0.8);
+      /* Browser Variations: */
+      -moz-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      }
+      /*
+      Multicoloured Hover Variations
+      */
+      #social-fb:hover {
+      color: #3B5998;
+      }
+      #social-tw:hover {
+      color: #4099FF;
+      }
+      #social-gp:hover {
+      color: #d34836;
+      }
+      #social-em:hover {
+      color: #f39c12;
+      }
+      /* Button styles: */
+      i.fb,       span.fb{         color: #3b5998; }
+      i.tw,       span.tw{     	color: #00aced; }
+      i.google,   span.google{ 	color: #dd4b39; }
+      i.linkin,   span.linkin{ 	color: #007bb6; }
+      i.pinterest,span.pinterest{ color: #cb2027; }
+      #colorstar { color: #ee8b2d;}
+      .badForm {color: #FF0000;}
+      .goodForm {color: #00FF00;}
+      .evaluation { margin-left:30px;} 
+      .profile_img_post {
+      border: 1px solid rgba(0, 0, 0, .1);
+      height: 48px !important;
+      }.image-post {
+      display: block;
+      width: 50px;
+      height: 50px;
+      }
+      .post_description .img_post {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      height: 450px;
+      display: block;
+      }
+      .custom_hr_post {
+      margin-top: 20px;
+      margin-bottom: 0px !important;
+      border: 0;
+      border-top: 1px solid #eee;
+      width: 100% !important;
+      }
+      .right_padding{
+      padding-right:25px;
+      color: rgb(58, 87, 149);
+      }
+      .custom_input_padding{
+      padding-bottom:20px;
+      }
+      .comment_hr{
+      clear: both;
+      }
+      .p_commnts_count{
+      display: inline-block;
+      float: right;
+      margin-right: 10px;
+      }
+      .p_comments{
+      color: #365899;
+      display: inline-block;
+      }  
+      .post_desc{
+      margin-left: 14px;
+      }
+      .img_post_comment{
+      float:left;
+      }
+      .links-post1{
+      padding-left: 15px;
+      padding-bottom: 0px;
+      max-width: 100%;
+      padding-top: 15px;
+      }
+      .link-post{
+      margin-right:10px;
+      }
+      .comments{
+      padding-left:15px;
+      }
+      .title-post{
+      color: rgb(58, 87, 149);
+      font-weight: bold;
+      }
+      .star_rating1{
+      float: left;
+    padding-left: 14px;
+    padding-top:10px;
+    padding-right: 20px;
+      }
+      .star_rating2{
+      padding-top:10px;
+      }
+      .p_rate_this_work{
+          float: left;
+    line-height: 2.40;
+    padding-top: 10px;
+    padding-right: 16px;
+    font-weight: 600;
+      }
+.hover:hover {
+  pointer-events: none;
+}
+.red{
+  color:red;
+}
+
+.blue{
+ pointer-events: none;
+}
+   </style>
+
+	</head>
+
+<body id="page-top" class="index" ng-controller="IndexDashboardcontroller">
+
+ <div class="container-fluid" style="height:7px;background-color:#39bbd1;">
+            <div class="row">
+               
+                </div>
+            </div>
+        </div>
+    <!-- Navigation -->
+<!--     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top"> -->
+<!--         <div class="container"> -->
+<!-- <!--             Brand and toggle get grouped for better mobile display --> -->
+<!--             <div class="navbar-header page-scroll"> -->
+<!--                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> -->
+<!--                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i> -->
+<!--                 </button> -->
+<!--                 <a class="navbar-brand page-scroll" href="#page-top">myArtVilla</a> -->
+<!--             </div> -->
+
+<!-- <!--             Collect the nav links, forms, and other content for toggling --> -->
+<!--             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+<!--                 <ul class="nav navbar-nav navbar-left"> -->
+<!--                     <li class="hidden"> -->
+<!--                         <a href="#page-top"></a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Artist'"> -->
+<!--                         <a class="page-scroll" href="/Artist.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Fashion'"> -->
+<!--                         <a class="page-scroll" href="/Fashion.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Writer'"> -->
+<!--                         <a class="page-scroll" href="/Writer.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Publisher'"> -->
+<!--                         <a class="page-scroll" href="/Publisher.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Editor'"> -->
+<!--                         <a class="page-scroll" href="/Editor.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Cover Designer'"> -->
+<!--                         <a class="page-scroll" href="/Cover Designer.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Layout Designer'"> -->
+<!--                         <a class="page-scroll" href="/Layout Designer.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Short Films'"> -->
+<!--                         <a class="page-scroll" href="/ShortFilms.html#/user_profile">Home</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.authenticate == 'Admin'"> -->
+<!--                         <a class="page-scroll" href="/Admin.html#/admin_dashboard">Home</a> -->
+<!--                     </li> -->
+                    
+<!--                     <li> -->
+<!--                         <a class="page-scroll" ng-click="getRolewiseData('Art And Photography');"  href="javascript:void(0)">Art & Photography</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a class="page-scroll" ng-click="getRolewiseData('Writer And Publisher');" href="javascript:void(0)">Writer & Publisher</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a class="page-scroll" ng-click="getRolewiseData('Short Films');" href="javascript:void(0)">Short Films</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a class="page-scroll" ng-click="getRolewiseData('Fashion');" href="javascript:void(0)">Fashion</a> -->
+<!--                     </li> -->
+                    
+<!--                 </ul> -->
+<!-- 				 <ul class="nav navbar-nav navbar-right"> -->
+<!--                     <li ng-if="session.length == 0 "> -->
+<!-- 					<a href="#" data-toggle="modal" data-target="#login"> Login</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.length == 0 "> -->
+<!-- 					<a  href="#" data-toggle="modal" data-target="#register"> Register</a> -->
+<!--                     </li> -->
+<!--                     <li ng-if="session.length != 0 "> -->
+<!-- 					<a  ng-click="log_out_guest();" href="javascript:void(0);"> Log Out</a> -->
+<!--                     </li> -->
+<!--                 </ul> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </nav> -->
+ <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">myArtVilla</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Artist'">
+                        <a class="page-scroll" href="/Artist.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Fashion'">
+                        <a class="page-scroll" href="/Fashion.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Writer'">
+                        <a class="page-scroll" href="/Writer.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Publisher'">
+                        <a class="page-scroll" href="/Publisher.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Editor'">
+                        <a class="page-scroll" href="/Editor.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Cover Designer'">
+                        <a class="page-scroll" href="/Cover Designer.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Layout Designer'">
+                        <a class="page-scroll" href="/Layout Designer.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Short Films'">
+                        <a class="page-scroll" href="/ShortFilms.html#/user_profile">Home</a>
+                    </li>
+                    <li ng-if="session.authenticate == 'Admin'">
+                        <a class="page-scroll" href="/Admin.html#/admin_dashboard">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a class="page-scroll" ng-click="getRolewiseData('Art And Photography');"  href="javascript:void(0)">Art & Photography</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ng-click="getRolewiseData('Writer And Publisher');" href="javascript:void(0)">Writer & Publisher</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ng-click="getRolewiseData('Short Films');" href="javascript:void(0)">Short Films</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ng-click="getRolewiseData('Fashion');" href="javascript:void(0)">Fashion</a>
+                    </li>
+                    
+                </ul>
+				 <ul class="nav navbar-nav navbar-right">
+                    <li ng-if="session.length == 0 ">
+					<a href="#" data-toggle="modal" data-target="#login"> Login</a>
+                    </li>
+                    <li ng-if="session.length == 0 ">
+					<a  href="#" data-toggle="modal" data-target="#register"> Register</a>
+                    </li>
+                    <li ng-if="session.length != 0 ">
+					<a  ng-click="log_out_guest();" href="javascript:void(0);"> Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+			
+    </nav>
+   
+ 	<div class="col-xs-12 text-center heading_padding_top">
+<!--  	{{page_name}} -->
+<ol class="breadcrumb  custom_breadcrumb  pull-left">
+				<li><i class="fa fa-home icon_right_margin" aria-hidden="true"></i><a href="dashboard.html">Home</a></li>
+				<li ng-controller="PostsDashboardcontroller" class="active">{{page_name}}</li>
+			</ol>
+			
+        </div> 
+<hr>
+
+
+ <div  ng-controller="IndexDashboardcontroller">
+   <div class="container" ng-controller="logincontroller">
+		<div class="container">
+		  <div class="modal fade" id="login" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close" data-dismiss="modal">×</button>
+		          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" novalidate="" name="Loginform">
+		           <div class="form-group" ng-show="error">
+						<div class="alert alert-danger">
+							 <strong>Error!</strong> {{error}}
+						</div>
+					</div>
+			        <div class="alert alert-success" ng-show="sucess">
+					  <strong>Success!</strong> {{sucess}}
+					</div>
+		            <div class="form-group" ng-class="{ 'has-error' : Loginform.user_name.$invalid && !Loginform.user_name.$pristine }">
+		              <label for="user_name"><span class="glyphicon glyphicon-user"></span> Username</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="user_name" 
+		              	name="user_name"
+		              	ng-model="user.user_name"
+		              	placeholder="Enter Username"
+		              	required
+		              >
+		            <p ng-show="Loginform.user_name.$invalid && !Loginform.user_name.$pristine"
+							class="help-block">Username is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Loginform.password.$invalid && !Loginform.password.$pristine }">
+		              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="password" 
+		              	name="password"
+		              	ng-model="user.password"
+		              	placeholder="Enter password"
+		              	required
+		              >
+		            <p ng-show="Loginform.password.$invalid && !Loginform.password.$pristine"
+							class="help-block">Password is required
+					</p>
+		            </div>
+		            <div class="checkbox">
+		              <label><input type="checkbox" value="" checked="">Remember me</label>
+		            </div>
+		              <button 
+		              	type="submit" 
+		              	class="btn btn-success btn-block"
+		              	ng-click="login_user(user)"
+		              	ng-disabled="Loginform.$invalid"
+		              >
+		              	<span class="glyphicon glyphicon-off"></span> Login
+		              </button>
+		          </form>
+		        </div>
+		        <div class="modal-footer">
+		          <button 
+		          	type="submit" 
+		          	class="btn btn-danger btn-default pull-left" 
+		          	data-dismiss="modal"
+		          >
+		          	<span class="glyphicon glyphicon-remove"></span> Cancel
+		          </button>
+		          <p>Not a member? <a href="#">Sign Up</a></p>
+		          <p>Forgot <a href="#">Password?</a></p>
+		        </div>
+		      
+		    </div>
+		  </div> 
+		</div>
+		<div class="container" ng-controller="registercontroller">
+		  <div class="modal fade" id="register" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close"  data-dismiss="modal">×</button>
+		          <h4><span class="glyphicon glyphicon-lock"></span> Register</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" novalidate="" name="Registerform">
+			        <div class="form-group" ng-show="error1">
+						<div class="alert alert-danger">
+							 <strong>Error!</strong> {{error1}}
+						</div>
+					</div>
+			        <div class="alert alert-success" ng-show="sucess1">
+					  <strong>Success!</strong> {{sucess1}}
+					</div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.user_name.$invalid && !Registerform.user_name.$pristine }">
+		              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="usrname" 
+		              	name="user_name" 
+		              	ng-model="user1.user_name"
+		              	placeholder="Enter username"
+		              	required
+		              >
+		             <p ng-show="Registerform.user_name.$invalid && !Registerform.user_name.$pristine"
+							class="help-block">Username is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.firstname.$invalid && !Registerform.firstname.$pristine }">
+		              <label for="firstname"><span class="glyphicon glyphicon-user"></span> Firstname</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="firstname" 
+		              	name="firstname" 
+		              	ng-model="user1.firstname"
+		              	placeholder="Enter firstname"
+		              	required
+		              >
+		             <p ng-show="Registerform.firstname.$invalid && !Registerform.firstname.$pristine"
+							class="help-block">Firstname is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.lastname.$invalid && !Registerform.lastname.$pristine }">
+		              <label for="lstname"><span class="glyphicon glyphicon-user"></span> Lastname</label>
+		              <input 
+		              	type="text" 
+		              	class="form-control" 
+		              	id="lastname" 
+		              	name="lastname" 
+		              	ng-model="user1.lastname"
+		              	placeholder="Enter lastname"
+		              	required
+		              >
+		             <p ng-show="Registerform.lastname.$invalid && !Registerform.lastname.$pristine"
+							class="help-block">Lastname is required
+					</p>
+		            </div>
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.email.$invalid && !Registerform.email.$pristine }">
+		              <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+		              <input 
+		              	type="email" 
+		              	class="form-control" 
+		              	id="email"
+		              	name="email"
+		              	ng-model="user1.email"
+		              	ng-pattern="email_pattern" 
+		              	placeholder="Enter Email"
+		              	required
+		              >
+		              <p  ng-show="Registerform.email.$invalid && !Registerform.email.$pristine && Registerform.email.$error.pattern"
+							class="help-block">Email should be in proper format.
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.Password.$invalid && !Registerform.Password.$pristine }">
+		              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="psw" 
+		              	name="password"
+		              	ng-model="user1.password"
+		              	placeholder="Enter password"
+		              	required
+		              >
+		             <p ng-show="Registerform.password.$invalid && !Registerform.password.$pristine"
+							class="help-block">Password is required
+					</p>
+		            </div>
+		            
+					 <div class="form-group" ng-class="{ 'has-error' : Registerform.confirm_password.$invalid && !Registerform.confirm_password.$pristine }">
+		              <label for="confirmpsw"><span class="glyphicon glyphicon-eye-open"></span>Confirm Password</label>
+		              <input 
+		              	type="password" 
+		              	class="form-control" 
+		              	id="confirmpsw"
+		              	name="confirm_password"
+		              	ng-model="user1.confirm_password" 
+		              	placeholder="Enter Confirm password"
+		              	required
+		              >
+		            <p ng-show="Registerform.confirm_password.$invalid && !Registerform.confirm_password.$pristine"
+							class="help-block">Confirm Password is required
+					</p>
+		            </div>
+		             <div class="form-group" ng-class="{ 'has-error' : Registerform.role.$invalid && !Registerform.role.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Choose Role</label>
+		              <select ng-model="user1.role" class="form-control" >
+		              	<option>Artist</option>
+		              	<option>Writer</option>
+		              	<option>Fashion</option>
+		              	<option>Publisher</option>
+		              	<option>Editor</option>
+		              	<option>Cover Designer</option>
+		              	<option>Layout Designer</option>
+		              	<option>Guest</option>
+		              </select>
+		            <p ng-show="Registerform.role.$invalid && !Registerform.role.$pristine"
+							class="help-block">Role is required
+					</p>
+		            </div>
+		            <div class="form-group" ng-class="{ 'has-error' : Registerform.contact_no.$invalid && !Registerform.contact_no.$pristine }">
+		              <label for="mobile"><span class="glyphicon glyphicon-earphone"></span>Mobile Number</label>
+		              <input 
+		              	type="number" 
+		              	class="form-control" 
+		              	ng-maxlength = "10"
+		              	ng-minlength = "10"
+		              	id="mobile" 
+		              	name="contact_no"
+		              	ng-model="user1.contact_no"
+		              	placeholder="Enter Mobile Number"
+		              	required
+		              >
+		            <p ng-show="Registerform.contact_no.$error.required && !Registerform.contact_no.$pristine"
+							class="help-block">Mobile No is required
+					</p>
+		            <p ng-show="Registerform.contact_no.$error.maxlength && !Registerform.contact_no.$pristine"
+							class="help-block">Minimum 10 digits allowed.
+					</p>
+		            <p ng-show="Registerform.contact_no.$error.minlength && !Registerform.contact_no.$pristine"
+							class="help-block">Minimun 10 digits allowed.
+					</p>
+		            </div>
+		              <button 
+		              	ng-click="register_user(user1)" 
+		              	ng-disabled="Registerform.$invalid"
+		              	type="submit" class="btn btn-success btn-block"
+		              >
+		              	<span class="glyphicon glyphicon-off"></span>Register
+		              </button>
+		          </form>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div> 
+		</div>
+	</div>
+	
+	<section id="user_post_section0" ng-controller="PostsDashboardcontroller">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+				<div class="thumbnail thumbnail-post custom_thumbnail custom_thumbnail_filter">
+				   <div class="filter-head">
+				<div class="head130">Sort By</div>
+			</div>
+	 <ul class="list-group list_sort_by">
+    <li class="list-group-item">Relevance</li>
+    <li class="list-group-item">Date:Newest</li>
+    <li class="list-group-item">Rating:High-Low</li>
+	
+  </ul>
+				</div>
+				
+				<div class="thumbnail thumbnail-post custom_thumbnail custom_thumbnail_filter">
+				   <div class="filter-head">
+				<div class="head130">Filter</div>
+			</div>
+				          <div class="form-group col-md-12 filter_dropdown">
+  <select class="form-control form_ctrl_filter_dropdown" id="sel1" ng-change="getRelatedArt()" ng-model="art_value">
+    <option value="Art And Photography">Art And Photography</option>
+    <option value="Writer">Writer</option>
+    <option value="Short Films">Short Films</option>
+    <option value="Fashion">Fashion</option>
+  </select>
+</div>
+				</div>
+				
+				</div>
+				<div class="col-md-8" >
+				<h4 ng-if="posts.length == 0 ">No Posts Found</h4>
+					<div class="thumbnail thumbnail-post" ng-repeat="works1 in posts|reverse">
+					<!--caption starts-->
+						<div class="caption">
+							<div class="media">
+								<div class="media-left">
+									<a href="" class="image-post">
+										<img src="{{works1.post_owner[0].profile_pic ? works1.post_owner[0].profile_pic : './assets/img/avatar.png'}}" width="50" height="50" class="profile_img_post"/>
+									</a>	
+								</div>
+								<div class="media-body" ng-click="authorDetails(works1.post_owner[0].user_id)">
+								<a class="media-heading title-post" href="javascript:void(0)">{{works1.post_owner[0].firstname|ucfirst}} {{works1.post_owner[0].lastname|ucfirst}}</a>
+<!-- 								<a href="user_details.html"><h5>5 Hours ago</h5></a> -->
+								</div>
+							</div>
+							<div class="post_description"> 
+							<p class="post_desc">{{works1.post_description}}<p>
+								<img alt="Client Logo" title="Client Logo" src="{{works1.file_path}}" class="img_post"/>
+							</div>
+						</div>
+						<!--caption ends-->
+						<hr class="custom_hr_post">
+						<div class="row">
+            <div class="col-md-8">
+            <div 
+            	star-rating rating-value="works1.post_rating_average" 
+            	class="hover star_rating1" 
+            	max="5" 
+            	on-rating-selected="getSelectedRating(1)" 
+            	style="float:left"
+            	ng-class="{hover: hoverme}"
+            >
+            </div>
+			<p style="float:left" class="p_rate_this_work">Rate This Work</p>
+			<div ng-init="rating = 1">
+			
+			</div>
+			<div 
+				star-rating rating-value="rating" 
+				ng-disabled="true" 
+				max="5" 
+				class="star_rating2" 
+				on-rating-selected="rateFunction1(rating,works1.post_id)" 
+				style="float:left"
+				ng-class="class"
+			>
+			</div>
+			<button  ng-class="class" type="button" class="btn btn-primary btn-xs rate_Button" ng-click="rateFunction(rating,works1.post_id)">Rate</button>
+			</div>
+			<div class="col-md-4">
+                                 <div class="social-icons">
+								 <span class="share_social">Share</span>
+<!--                                      <g:plus -->
+<!--                                     	ng-click="share_google(works1)" -->
+<!--                                     	gplus data-size="tall"	data-annotation="bubble" href="http://127.0.0.1:8080/share_post.html#/{{works1.post_id}}" action="share" -->
+<!--                                     > -->
+<!--                                     <g:plus> -->
+                                    <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                    <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                                    <a 
+                                    	ng-click="share_google(works1.post_id)"
+	  								>
+	  									<i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i>
+	  								</a>
+<!--                                     	href="javascript:angular.element( -->
+<!-- 											function(){ -->
+<!-- 											var w=480;var h=380; -->
+<!-- 											var abc = 555; -->
+<!-- 											var x=Number((window.screen.width-w)/2); -->
+<!-- 											var y=Number((window.screen.height-h)/2); -->
+<!-- 											window.open('https://plus.google.com/share?url='+encodeURIComponent('http://127.0.0.1:8080/Artist.html#/work_history/' + abc)+' -->
+<!-- 											  &title='+encodeURIComponent(document.title),'','width='+w+',height='+h+',left='+x+',top='+y+', -->
+<!-- 											  scrollbars=no'); -->
+<!-- 	 									 })();"  -->
+<!-- 	  									style="background: url(/wp-content/themes/HTML5/images/googleplus.png) no-repeat scroll left center transparent;" -->
+                                    <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-linkedin-square fa-3x social"></i></a>
+                                 </div>
+                              </div>
+                             
+                           </div
+						
+						<hr>
+						 <div class="links-post1">
+							<img src="./assets/img/avatar.png" width="40" height="40" class="img_post_comment">
+							<div class="form-group">
+							    <div class="col-sm-10 custom_input_padding">
+								<input type="text" class="form-control custom_form_group" id="pwd" placeholder="Write a comment" ng-model="comment_text" ng-enter="submitComment(comment_text,works1.post_id)">
+							</div>			
+						</div>
+						<hr class="comment_hr">
+						<div class="comments" style="max-height:250px;overflow:auto;">
+<!-- 						<p class="p_comments">View Previous Comments</p> -->
+<!-- 						<p class="p_commnts_count">1 of 1</p> -->
+						<p class="PComment" ng-repeat ="comments in works1.post_comments|reverse">
+						
+						<img src="{{comments.profile_pic ? comments.profile_pic : './assets/img/avatar.png'}}" width="50" height="50">
+						<span class="commentor_name"> {{comments.firstname|ucfirst}} {{comments.lastname|ucfirst}}</span> <span>{{comments.comment}}</span></p>
+
+						
+						</div>
+						
+					</div>
+			<!-- 		<div class="comments">
+				<div class="comment_img">
+				
+				</div>
+				<div class="input">
+					  
+					  <i class="fa fa-icon"></i>
+					</div>
+				
+				    
+			</div> -->
+				</div>
+				<div class="col-md-1">
+				</div>
+			</div>
+		</div>
+	</section>
+	
+    </div>
+	
+		
+	   
+	
+	
+	
+	  <div class="container">
+            <div class="row">
+                <div class="col-md-4"> <span class="copyright">Copyright &copy; Your Website 2016</span>
+                </div>
+            </div>
+        </div>
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="assets\img\portfolio\roundicons-free.png" alt="">
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <p>
+                                    <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                                <ul class="list-inline">
+                                    <li>Date: July 2014</li>
+                                    <li>Client: Round Icons</li>
+                                    <li>Category: Graphic Design</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>Project Heading</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="assets\img\portfolio\startup-framework-preview.png" alt="">
+                                <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                                <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="assets\img\portfolio\treehouse-preview.png" alt="">
+                                <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
+                                <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="assets\img\portfolio\golden-preview.png" alt="">
+                                <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
+                                <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="assets\img\portfolio\escape-preview.png" alt="">
+                                <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
+                                <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-responsive img-centered" src="assets\img\portfolio\dreams-preview.png" alt="">
+                                <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
+                                <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+		<script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jssor.slider-21.1.5.min.js"></script>
+    <script src="vendor\bootstrap\js\bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js\jqBootstrapValidation.js"></script>
+    <script src="../controller/Index/IndexDashboardcontroller.js"></script>
+    <script src="../controller/Posts/PostsDashboardcontroller.js"></script>
+    <script src="../controller/Posts/Profilecontroller.js"></script>
+    <script src="js\contact_me.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js"></script>
+    <script src="js\agency.min.js"></script>
+    <script src="../assets/angular-rating/src/angular-rating.js"></script>
+	
+	    <script>
+        jQuery(document).ready(function ($) {
+            
+            var jssor_1_SlideoTransitions = [
+              [{b:5500,d:3000,o:-1,r:240,e:{r:2}}],
+              [{b:-1,d:1,o:-1,c:{x:51.0,t:-51.0}},{b:0,d:1000,o:1,c:{x:-51.0,t:51.0},e:{o:7,c:{x:7,t:7}}}],
+              [{b:-1,d:1,o:-1,sX:9,sY:9},{b:1000,d:1000,o:1,sX:-9,sY:-9,e:{sX:2,sY:2}}],
+              [{b:-1,d:1,o:-1,r:-180,sX:9,sY:9},{b:2000,d:1000,o:1,r:180,sX:-9,sY:-9,e:{r:2,sX:2,sY:2}}],
+              [{b:-1,d:1,o:-1},{b:3000,d:2000,y:180,o:1,e:{y:16}}],
+              [{b:-1,d:1,o:-1,r:-150},{b:7500,d:1600,o:1,r:150,e:{r:3}}],
+              [{b:10000,d:2000,x:-379,e:{x:7}}],
+              [{b:10000,d:2000,x:-379,e:{x:7}}],
+              [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:9100,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:10000,d:1600,x:-200,o:-1,e:{x:16}}]
+            ];
+            
+            var jssor_1_options = {
+              $AutoPlay: false,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+             
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+	
+	<script>
+	$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+  $("#myBtn1").click(function(){
+        $("#myModal").modal();
+    });
+  $("#myBtn2").click(function(){
+        $("#myModal").modal();
+    });
+	
+});
+	</script>
+<!-- 	<script>
+	
+$('.viewed').bind('mouseover', function () {
+    $(this).addClass('hoversDiv');
+    $('.viewed').not('.hoversDiv').animate({ -->
+        <!-- opacity: 0.3 -->
+<!--     });
+});
+$('.viewed').bind('mouseout', function () {
+    $('.viewed').removeClass('hoversDiv').fadeTo('normal', 1);
+});
+	</script>	 -->
+<!-- 	<script>
+	<!-- 
+$(document).ready(function(){
+        $(".viewed").slideDown("slow");
+
+}); -->
+	<!-- </script>  -->
+</body>
+
+</html>
+

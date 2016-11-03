@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" ng-app="Admin" ng-cloak>
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>My Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/material-dashboard.css" rel="stylesheet"/>
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link href="./assets/css/bootstrap_datatable_custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/angular-datatables.min.css" />
+	<link rel="stylesheet" href="./assets/vendor/datatables/media/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="./assets/vendor/datatables-responsive/css/dataTables.responsive.css">
+	<link
+	href="./assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css"	rel="stylesheet" />
+	<link href="./assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+     <link href="../css/agency.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./assets/css/sweetalert.min.css">
+</head>
+<body>
+	<div class="wrapper">
+	    <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+			<div class="logo">
+				<a href="#" class="simple-text">
+					ADmin
+				</a>
+			</div>
+
+	    	<div class="sidebar-wrapper">
+	            <ul class="nav">
+	                <li id="dashboard_option" class="active">
+	                    <a  href="/Admin.html#/admin_dashboard">
+	                        <i class="material-icons">dashboard</i>
+	                        <p>Dashboard</p>
+	                    </a>
+	                </li>
+	                <li id="artist_option" ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/artist/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p>Artist Management</p>
+	                    </a>
+	                   
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/writer/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p>Writer Management</p>
+	                    </a>
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/fashion/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p>Fashion Management</p>
+	                    </a>
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/short_film/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p>Short Film Management</p>
+	                    </a>
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/publisher/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p>Publisher Management</p>
+	                    </a>
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/editor/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p>Editor Management</p>
+	                    </a>
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/cover_designer/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p style="margin-left:44px;">Cover Designer Management</p>
+	                    </a>
+	                </li>
+	                <li ng-class="{active : activeMenu === 'User Profile'}">
+	                    <a href="/Admin.html#/layout_designer/user_management">
+	                        <i class="material-icons">person</i>
+	                        <p style="margin-left:44px;">Layout Designer Management</p>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="/Admin.html#/change_password">
+	                        <i class="material-icons">person</i>
+	                        <p style="margin-left:44px;">Change Password</p>
+	                    </a>
+	                </li>
+	                
+	            </ul>
+	    	</div>
+	    </div>
+
+	    <div class="main-panel">
+			<nav class="navbar navbar-transparent navbar-absolute">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="javascript:void(0)">Material Dashboard</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+<!-- 							<li> -->
+<!-- 								<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"> -->
+<!-- 									<i class="material-icons">dashboard</i> -->
+<!-- 									<p class="hidden-lg hidden-md">Dashboard</p> -->
+<!-- 								</a> -->
+<!-- 							</li> -->
+							<li class="dropdown" ng-controller="AdminDashboardController">
+								<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+	 							   <i class="material-icons">person</i>
+	 							   <p class="hidden-lg hidden-md">Profile</p>
+		 						</a>
+								<ul class="dropdown-menu">
+									<li><a>Welcome {{user_name}}</a></li>
+									<li><a ng-click="logout_now()">Logout</a></li>
+									
+								</ul>
+							</li>
+						</ul>
+
+<!-- 						<form class="navbar-form navbar-right" role="search"> -->
+<!-- 							<div class="form-group  is-empty"> -->
+<!-- 								<input type="text" class="form-control" placeholder="Search"> -->
+<!-- 								<span class="material-input"></span> -->
+<!-- 							</div> -->
+<!-- 							<button type="submit" class="btn btn-white btn-round btn-just-icon"> -->
+<!-- 								<i class="material-icons">search</i><div class="ripple-container"></div> -->
+<!-- 							</button> -->
+<!-- 						</form> -->
+					</div>
+				</div>
+			</nav>
+
+			<div class="content">
+				 <div ng-view></div>
+			</div>
+
+<!-- 			<footer class="footer"> -->
+<!-- 				<div class="container-fluid"> -->
+<!-- 					<nav class="pull-left"> -->
+<!-- 						<ul> -->
+<!-- 							<li> -->
+<!-- 								<a href="#"> -->
+<!-- 									Home -->
+<!-- 								</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#"> -->
+<!-- 									Company -->
+<!-- 								</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#"> -->
+<!-- 									Portfolio -->
+<!-- 								</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#"> -->
+<!-- 								   Blog -->
+<!-- 								</a> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</nav> -->
+<!-- 					<p class="copyright pull-right"> -->
+<!-- 						&copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web -->
+<!-- 					</p> -->
+<!-- 				</div> -->
+<!-- 			</footer> -->
+		</div>
+	</div>
+
+</body>
+	<script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script src="../assets/js/angular.min.js"></script>
+	
+	<script src="./assets/vendor/datatables/media/js/jquery.dataTables.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.directive.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.factory.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.instances.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.options.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.renderer.js"></script>
+	<script src="./assets/angular_datatables_js/angular-datatables.util.js"></script>
+	<script src="./assets/angular_datatables_js/datatableController.js"></script>
+	 <script src="./assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+	
+	<script src="../assets/js/angular-route.min.js"></script>
+	<script src="./app/admin_route.js"></script>
+	<script src="./controller/Admin/AdminDashboardController.js"></script>
+	
+	<script src="./controller/Admin/Artist/ArtistController.js"></script>
+	<script src="./controller/Admin/Artist/ArtistEditController.js"></script>
+	<script src="./controller/Admin/Artist/ArtistViewController.js"></script>
+	<script src="./controller/Admin/Artist/ArtistAddController.js"></script>
+	
+	<script src="./controller/Admin/Writer/WriterController.js"></script>
+	<script src="./controller/Admin/Writer/WriterEditController.js"></script>
+	<script src="./controller/Admin/Writer/WriterViewController.js"></script>
+	<script src="./controller/Admin/Writer/WriterAddController.js"></script>
+	
+	<script src="./controller/Admin/Fashion/FashionController.js"></script>
+	<script src="./controller/Admin/Fashion/FashionEditController.js"></script>
+	<script src="./controller/Admin/Fashion/FashionViewController.js"></script>
+	
+	<script src="./controller/Admin/Short Film/ShortFilmController.js"></script>
+	<script src="./controller/Admin/Short Film/ShortFilmEditController.js"></script>
+	<script src="./controller/Admin/Short Film/ShortFilmViewController.js"></script>
+	
+	<script src="./controller/Admin/Publisher/PublisherController.js"></script>
+	<script src="./controller/Admin/Publisher/PublisherEditController.js"></script>
+	<script src="./controller/Admin/Publisher/PublisherViewController.js"></script>
+	<script src="./controller/Admin/Publisher/PublisherAddController.js"></script>
+	
+	<script src="./controller/Admin/Editor/EditorController.js"></script>
+	<script src="./controller/Admin/Editor/EditorEditController.js"></script>
+	<script src="./controller/Admin/Editor/EditorViewController.js"></script>
+	<script src="./controller/Admin/Editor/EditorAddController.js"></script>
+	
+	<script src="./controller/Admin/CoverDesigner/CoverDesignerController.js"></script>
+	<script src="./controller/Admin/CoverDesigner/CoverDesignerEditController.js"></script>
+	<script src="./controller/Admin/CoverDesigner/CoverDesignerViewController.js"></script>
+	<script src="./controller/Admin/CoverDesigner/CoverDesignerAddController.js"></script>
+	
+	<script src="./controller/Admin/LayoutDesigner/LayoutDesignerController.js"></script>
+	<script src="./controller/Admin/LayoutDesigner/LayoutDesignerEditController.js"></script>
+	<script src="./controller/Admin/LayoutDesigner/LayoutDesignerViewController.js"></script>
+	<script src="./controller/Admin/LayoutDesigner/LayoutDesignerAddController.js"></script>
+	
+	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../assets/js/material.min.js" type="text/javascript"></script>
+	<script src="../assets/js/chartist.min.js"></script>
+	<script src="http://localhost:8989/socket.io/socket.io.js"></script>
+	<script src="../js/agency.min.js"></script>
+	
+	<script src="../assets/js/bootstrap-notify.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="../assets/js/material-dashboard.js"></script>
+	<script src="../assets/fileupload/js/fileinput.js"></script>
+	<script src="../assets/js/demo.js"></script>
+	<script type="text/javascript" src="../assets/js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../assets/js/ngSweetAlert.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function(){
+
+			// Javascript method's body can be found in assets/js/demos.js
+        	demo.initDashboardPageCharts();
+
+    	});
+	</script>
+</html>

@@ -1,0 +1,117 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Add User</h4>
+                </div>
+                <div class="card-content">
+                    <form novalidate="" name="UpdateProfileform">
+                        <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.user_name.$invalid && !UpdateProfileform.user_name.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label>Username</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control" 
+                                    	name="user_name"
+                                    	ng-model="artist.user_name"
+                                    	required
+                                    >
+			                    <p ng-show="UpdateProfileform.user_name.$invalid && !UpdateProfileform.user_name.$pristine"
+										class="help-block">Username is required.
+								</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label >Email Address</label>
+                                    <input 
+                                    	type="email" 
+                                    	name="email"
+                                    	ng-model="artist.email" 
+                                    	class="form-control"
+                                    	ng-pattern="email_pattern"
+                                    	required
+                                    >
+                                   <p ng-show="UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine"
+										class="help-block">Email should in proper format.
+								</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+								<div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.firstname.$invalid && !UpdateProfileform.firstname.$pristine }">
+	                                <div class="form-group label-floating">
+	                                    <label >First Name</label>
+	                                    <input 
+	                                    	type="text" 
+	                                    	name="firstname"
+	                                    	ng-model="artist.firstname" 
+	                                    	class="form-control"
+	                                    	required
+	                                    >
+	                                   <p ng-show="UpdateProfileform.firstname.$invalid && !UpdateProfileform.firstname.$pristine"
+											class="help-block">First Name is required.
+									</p>
+	                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.lastname.$invalid && !UpdateProfileform.lastname.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label>Last Name</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="artist.lastname" 
+                                    	class="form-control"
+                                    	name="lastname"
+                                    	required
+                                    >
+                                    <p  ng-show="UpdateProfileform.lastname.$invalid && !UpdateProfileform.lastname.$pristine"
+										class="help-block">Last Name is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{ 'has-error' : UpdateProfileform.address.$invalid && !UpdateProfileform.address.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label >Address</label>
+                                    <input 
+                                    	type="text" 
+                                    	ng-model="artist.address" 
+                                    	class="form-control"
+                                    	name="address"
+                                    	required
+                                    >
+                                    <p  ng-show="UpdateProfileform.address.$invalid && !UpdateProfileform.address.$pristine"
+										class="help-block">Address is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="sucess_message" class="alert alert-success">
+							  <strong>{{sucess}}</strong> {{sucess_message}}
+						</div>
+						<button
+                        	type="submit" 
+                        	class="btn btn-primary pull-right"
+                        	ng-click="back()"
+                        >Cancel
+                        </button>
+						<button  style="margin-right:15px;" 
+                        	type="submit" 
+                        	class="btn btn-primary pull-right"
+                        	ng-disabled="UpdateProfileform.$invalid"
+                        	ng-click="addUser(artist)"
+                        >Add
+                        </button>
+						
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

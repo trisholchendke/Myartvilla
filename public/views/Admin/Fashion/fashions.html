@@ -1,0 +1,60 @@
+<style>
+ .table > thead > tr > th { 
+     font-weight: 600 !important; 
+ } 
+ .iconeye {
+    color: #231d17 !important;
+}
+ .iconpencil {
+    color: #231d17 !important;
+}
+ .icontrash {
+    color: #231d17 !important;
+}
+ #makecolor {
+    color: white !important;
+}
+.spanid{
+margin-left:10px;
+}
+</style>	            
+	            <div class="container-fluid">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+	                            <div class="card-header" style="margin:0px; !important" data-background-color="purple">
+	                                <h4 class="title">Fashion Users</h4>
+	                            </div>
+					<div class="card-content" ng-controller="FashionController as chapterCtrl">	    
+ 						<table class="table table-responsive" datatable="ng" id="onsiteuser" dt-options="chapterCtrl.dtOptions" dt-column-defs="chapterCtrl.dtColumnDefs" id="cb-mychapter-table">
+ 							<thead>
+ 								<th>Username</th>
+ 								<th>First Name</th>
+ 								<th>Last Name</th>
+ 								<th>Action</th>
+ 							</thead>
+ 							<tbody>
+ 								<tr ng-repeat="artist in artists">
+	 								<td>{{artist.user_name}}</td>
+	 								<td>{{artist.firstname}}</td>
+	 								<td>{{artist.lastname}}</td>
+	 								<td><span><a class="iconeye" ng-click="viewArtistUser(artist)"><i class="fa fa-eye" aria-hidden="true"></i></a>
+</span><span class="spanid"><a class="iconpencil" ng-click="editArtistUser(artist)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+</span>
+<span class="spanid"><a class="icontrash" ng-click="onRemoveUser(artist._id)"><i class="fa fa-trash" aria-hidden="true"></i></a></span>
+</td>
+ 								</tr>
+<!--  								<tr> -->
+<!--  								<td colspan="4"> -->
+<!--  								<a id="makecolor" href="Admin.html#/artist/add_user" class="btn btn-primary pull-right">Add User</a> -->
+ 									    
+<!--  								</td> -->
+<!--  								</tr> -->
+ 							</tbody>
+ 						</table>
+    				</div>
+    				</div>
+    				</div>
+    				</div>
+	            </div>
+	            

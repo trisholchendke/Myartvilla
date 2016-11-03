@@ -1,0 +1,54 @@
+{
+  "name": "angular-rating",
+  "version": "3.0.2",
+  "description": "A simple component for star ratng in Angular 1.5",
+  "main": "src/angular-rating.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medhatdawoud/angular-rating.git"
+  },
+  "keywords": [
+    "angular",
+    "rating",
+    "components"
+  ],
+  "author": {
+    "name": "Medhat Dawoud"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medhatdawoud/angular-rating/issues"
+  },
+  "homepage": "https://github.com/medhatdawoud/angular-rating#readme",
+  "gitHead": "c08fa7fc48c7d6906600b390461d802c6bce2e32",
+  "_id": "angular-rating@3.0.2",
+  "_shasum": "e690cbd058a6a200ed0cc6d36a1baf57b7d36555",
+  "_from": "angular-rating@latest",
+  "_npmVersion": "3.10.5",
+  "_nodeVersion": "4.4.3",
+  "_npmUser": {
+    "name": "medhatdawoud",
+    "email": "medhatdawoud@gmail.com"
+  },
+  "dist": {
+    "shasum": "e690cbd058a6a200ed0cc6d36a1baf57b7d36555",
+    "tarball": "https://registry.npmjs.org/angular-rating/-/angular-rating-3.0.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "medhatdawoud",
+      "email": "medhatdawoud@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/angular-rating-3.0.2.tgz_1469369455311_0.10346566303633153"
+  },
+  "_resolved": "https://registry.npmjs.org/angular-rating/-/angular-rating-3.0.2.tgz"
+}

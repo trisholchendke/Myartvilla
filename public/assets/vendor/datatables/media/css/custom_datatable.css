@@ -1,0 +1,21 @@
+table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before{
+	padding-right:4px;
+}
+div.dataTables_wrapper div.dataTables_filter{
+	text-align: center;
+}
+/* css for angular datatable*/
+/* .dataTables_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, .dataTables_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before{ */
+/* 	background: #00acac !important;  */
+/*     border-radius: 0px !important; */
+/*     border: none !important; */
+/*     top: 8px !important; */
+/*     left: 3px !important; */
+/*     line-height: 15px !important; */
+/*     box-shadow: 4px 2px 0px #888888 !important; */
+/* } */
+
+div.dataTables_wrapper div.dataTables_length select{
+	border:1px solid black;
+}
+/* css for angular datatable ends*/	

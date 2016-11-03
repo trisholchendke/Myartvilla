@@ -1,0 +1,220 @@
+<style>
+img{
+width: 99%;
+}
+.custom_list_group{
+	    width: 96% !important;
+    margin-left: 2% !important;
+    margin-right: 1% !important;
+    color: gray !important;
+}
+.post_description .img_post {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    height: 501px !important;
+    display: block;
+}
+.media-heading{
+	    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+    margin-left: 12px !important;
+	    
+}
+.profile_img_post {
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 48px !important;
+}.image-post {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+.post_description .img_post {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    height: 450px;
+    display: block;
+}
+.custom_hr_post {
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    border: 0;
+    border-top: 1px solid #eee;
+    width: 100% !important;
+}
+
+.right_padding{
+	padding-right:25px;
+	color: rgb(58, 87, 149);
+}
+.custom_input_padding{
+	padding-bottom:20px;
+}
+.comment_hr{
+	    clear: both;
+}
+	.p_commnts_count{
+	display: inline-block;
+    float: right;
+    margin-right: 10px;
+
+	}
+	.p_comments{
+		 color: #365899;
+		 display: inline-block;
+		 
+	}  
+	.post_desc{
+	    margin-left: 14px;
+	}
+	.img_post_comment{
+	float:left;
+	
+}
+.links-post1{
+	padding-left: 15px;
+    padding-bottom: 0px;
+    max-width: 100%;
+    padding-top: 15px;
+}
+.link-post{
+margin-right:10px;
+}
+.comments{
+padding-left:15px;
+}
+.title-post{
+	color: rgb(58, 87, 149);
+	font-weight: bold;
+}
+</style> 
+ 
+ <div class="container-fluid" ng-controller="GiveawayThemeAudienceController">
+	                <div class="row">
+						<div class="col-md-8">
+					<div class="thumbnail thumbnail-post">
+					<!--caption starts-->
+						<div class="caption">
+							<div class="media">							
+								<div class="media-body">
+								<a class="media-heading title-post"  href="javascript:void(0)">{{works1[0].theme_name}}</a>
+								
+								</div>
+							</div>
+							<div class="post_description"> 
+							<p class="post_desc">{{works1[0].theme_description}}</p>
+								<video ng-if="works1[0].file_type == 'video/mp4'" ng-src="{{works1[0].theme_img}}" controls></video>
+								<img height="50%" width="50%" src="{{works1[0].theme_img}}" ng-if="works1[0].file_type == 'image/jpeg'">
+							</div>
+						</div>
+						<div class="list-group custom_list_group">
+						    <a href="#" class="list-group-item">
+						      <h4 class="list-group-item-heading"><i class="fa fa-users my_giveaway_icon" aria-hidden="true"></i>Target Audience</h4>
+						      <p class="list-group-item-text">{{works1[0].target_audience}}</p>
+						    </a>
+						    <a href="#" class="list-group-item">
+						      <h4 class="list-group-item-heading"><i class="fa fa-television my_giveaway_icon" aria-hidden="true"></i>About Theme</h4>
+						      <p class="list-group-item-text">{{works1[0].about_theme}}</p>
+						    </a>
+						    <a href="#" class="list-group-item">
+						      <h4 class="list-group-item-heading"><i class="fa fa-gift my_giveaway_icon" aria-hidden="true"></i>Theme Prize</h4>
+						      <p class="list-group-item-text">{{works1[0].theme_prize}}</p>
+						    </a>
+					  	</div>
+						<div class="form-group">
+								<div class="row">
+									<div class="col-sm-6 col-sm-offset-3">
+										<input  
+											style=" background-color: #00c4cc !important;"
+											name="register-submit" 
+											id="register-submit" 
+											tabindex="6" 
+											class="form-control btn btn-register" 
+											value="Submit"
+											ng-disabled="UpdateProfileform.$invalid"
+                        					ng-click="audienceRegister(works1[0].theme_id)"
+										>
+									</div>
+								</div>
+						</div>					
+				</div>
+				</div>
+				
+				       <div class="col-md-4">
+	                        <div class="card">
+	                            <div class="card-header" data-background-color="purple">
+	                                <h4 class="title">Audience Profile</h4>	                                
+	                            </div>
+	                            <div class="card-content">
+							<form id="register-form" novalidate="" name="UpdateProfileform" role="form">								
+								<div class="form-group" class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.firstname.$invalid && !UpdateProfileform.firstname.$pristine }">
+									<input 
+                                    	type="text" 
+                                    	name="firstname" 
+                                    	ng-model="user_profile.firstname" 
+                                    	placeholder="Enter Firstname"
+                                    	class="form-control"
+                                    	required
+                                    >
+                                    <p  ng-show="UpdateProfileform.firstname.$invalid && !UpdateProfileform.firstname.$pristine"
+										class="help-block">First Name is required
+									</p>
+								</div>
+								<div class="form-group" class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.lastname.$invalid && !UpdateProfileform.lastname.$pristine }">
+									<input 
+	                                   	type="text" 
+	                                   	ng-model="user_profile.lastname" 
+	                                   	class="form-control"
+	                                   	name="lastname"
+	                                   	placeholder="Enter Lastname"
+	                                   	required
+	                                   >
+	                                   <p  ng-show="UpdateProfileform.lastname.$invalid && !UpdateProfileform.lastname.$pristine"
+										class="help-block">Last Name is required
+										</p>
+								</div>
+								  <div class="form-group" class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine }">
+										 <input 
+                                    	type="email" 
+                                    	name="email"
+                                    	ng-model="user_profile.email" 
+                                    	class="form-control"
+                                    	ng-pattern="email_pattern"
+                                    	placeholder="Enter Email Id"
+                                    	required
+	                                    >
+	                                   	<p  ng-show="UpdateProfileform.email.$invalid && !UpdateProfileform.email.$pristine && UpdateProfileform.email.$error.pattern"
+											class="help-block">Email should be in proper format.
+										</p>
+									</div>
+								    <div class="form-group" class="col-md-6" ng-class="{ 'has-error' : UpdateProfileform.contact_no.$invalid && !UpdateProfileform.contact_no.$pristine }">
+										<input 
+	                                    	type="number" 
+	                                    	name="contact_no"
+	                                    	ng-model="user_profile.contact_no" 
+	                                    	class="form-control"
+	                                    	ng-maxlength = "10"
+	                                    	ng-minlength="10"
+	                                    	placeholder="Enter Contact No"
+	                                    	required
+	                                    >
+	                                   <p  ng-show="UpdateProfileform.contact_no.$error.required && !UpdateProfileform.contact_no.$pristine"
+											class="help-block">Mobile No is required.
+										</p>
+	                                   <p  ng-show="UpdateProfileform.contact_no.$error.maxlength && !UpdateProfileform.contact_no.$pristine"
+											class="help-block">Only 10 digits allowed.
+										</p>
+	                                   <p  ng-show="UpdateProfileform.contact_no.$error.minlength && !UpdateProfileform.contact_no.$pristine"
+											class="help-block">Only 10 digits allowed.
+										</p>
+	                            	</div>
+								</form>
+	                        </div>
+	                    </div>
+				
+				
+				</div>
+</div>
+</div>
+

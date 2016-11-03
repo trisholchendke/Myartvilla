@@ -1,0 +1,63 @@
+<style>
+.modal-backdrop {
+    position: initial !important;
+}
+.img-chg{
+width:250px !important;
+height:209px !important;
+}
+.portfolio-hover{
+width:235px !important;
+height:209px !important;
+}
+.portfolio-hover-content{
+top:34% !important;
+}
+.zero_padding {
+    padding-right: 0px !important;
+    padding-left: 15px !important;
+}
+#portfolio .portfolio-item{
+margin-bottom:8px !important;
+}
+
+</style>
+			    <div class="content">
+				 <div class="container-fluid">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+	                            <div class="card-header" data-background-color="purple">
+	                                <h4 class="title">Service Provider Details</h4>	                                
+	                            </div>
+	                            <div class="card-content table-responsive">
+	                                <table id="result" class="table table-hover">
+	                                    <thead class="text-primary">
+	                                    	<tr>
+											<th>FirstName</th>
+											<th>LastName</th>
+											<th>Price</th>
+											<th>Action</th>
+											</tr>
+									   </thead>
+	                                    <tbody ng-repeat="provider in service_providers">
+	                                        <tr>
+	                                        	<td>{{provider.firstname|ucfirst}}</td>
+	                                        	<td>{{provider.lastname|ucfirst}}</td>
+												<td>{{provider.price}}</td>
+												<td>
+													<button type="button" ng-click="sendToHim(provider)" class="btn_send_to_him btn btn-info select_{{provider.user_id}}">Send To Him</button></td>
+	                                       		
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                                  <div class="confirm_buttons">
+								<button type="button" class="btn btn-md btn-warning" ng-click="back()">Back</button>
+							</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	            

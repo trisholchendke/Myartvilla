@@ -1,0 +1,227 @@
+<style>
+.modal-backdrop {
+    position: initial !important;
+}
+.img-chg{
+width:250px !important;
+height:209px !important;
+}
+.portfolio-hover{
+width:235px !important;
+height:209px !important;
+}
+.portfolio-hover-content{
+top:34% !important;
+}
+.zero_padding {
+    padding-right: 0px !important;
+    padding-left: 15px !important;
+}
+#portfolio .portfolio-item{
+margin-bottom:8px !important;
+}
+
+</style>
+	            <div class="">
+	                <div class="row">
+	                <form role="form" novalidate="" name="PostYourWorkform">
+                      <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header" data-background-color="purple">
+                    <h4 class="title">Send & Create My Work</h4>
+                </div>
+                <div class="card-content">
+              						<div ng-class="{ 'has-error' : PostYourWorkform.role.$invalid && !PostYourWorkform.role.$pristine }">
+	                    <label class="control-label">Select Service Provider</label>
+	                    <select 
+	                    class="form-control"
+	                    ng-model="post.role"
+	                    required
+	                    >
+	                    	<option value="Editor">Editor</option>
+	                    	<option value="Publisher">Publisher</option>
+	                    	<option value="Layout Designer">Layout Designer</option>
+	                    	<option value="Cover Designer">Cover Designer</option>
+	                    </select>
+	                     <p ng-show="PostYourWorkform.role.$invalid && !PostYourWorkform.role.$pristine"
+										class="help-block">Please Select service provider
+									</p>
+									</div>
+                           <div class="row">
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.min_price.$invalid && !PostYourWorkform.min_price.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Price Range Min</label>
+							        <input
+							        	type="number" 
+							        	class="form-control" 
+							        	name="min_price"
+							        	ng-model="post.min_price"
+                                    	required
+							        >
+									 <p ng-show="PostYourWorkform.min_price.$invalid && !PostYourWorkform.min_price.$pristine"
+										class="help-block">Minimum Price Range is required
+									</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-class="{ 'has-error' : PostYourWorkform.max_price.$invalid && !PostYourWorkform.max_price.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Price Range Max</label>
+							        <input 
+							        	type="number"
+							        	class="form-control" 
+							        	name="max_price"
+							        	ng-model="post.max_price"
+							        	min="{{post.min_price}}"
+                                    	required
+							        >
+									 <p ng-show="PostYourWorkform.max_price.$invalid && !PostYourWorkform.max_price.$pristine"
+										class="help-block">Maximum Price Range is required
+									</p>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{ 'has-error' : PostYourWorkform.post_name.$invalid && !PostYourWorkform.post_name.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Prologue</label>
+                                    <input 
+                                    	type="text" 
+                                    	class="form-control"
+                                    	name="post_name"
+                                    	ng-model="post.post_name"
+                                    	required
+                                    >
+                                    <p ng-show="PostYourWorkform.post_name.$invalid && !PostYourWorkform.post_name.$pristine"
+										class="help-block">Prologue is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{ 'has-error' : PostYourWorkform.post_description.$invalid && !PostYourWorkform.post_description.$pristine }">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Summary</label>
+                                    <textarea 
+                                    	rows="15"
+                                    	class="form-control"
+                                    	name="post_description"
+                                    	ng-model="post.post_description"
+                                    	required
+                                    ></textarea>
+                                    <p ng-show="PostYourWorkform.post_description.$error.required && !PostYourWorkform.post_description.$pristine"
+										class="help-block">Summary is required
+									</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+	                        <label class="control-label">Select File</label>
+							<input 
+								id="input-20" 
+								type="file"
+								class="form-control" 
+								ng-model="post.document1" 
+								valid-file 
+								onchange="angular.element(this).scope().onVideoFileChosen(this)"
+								required
+							>
+							 <div class="progress">
+							<div class="progress-bar progress-bar-striped active"
+									role="progressbar" id="bar_video" aria-valuenow="0"
+									aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+						</div>
+                        </div>
+                        <button 
+                        	type="submit" 
+                        	class="btn btn-primary pull-right"
+                        	ng-disabled="PostYourWorkform.$invalid"
+                        	ng-click="post_your_work()"
+                        >Proceed
+                        </button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+					</div>
+			    </div>
+			    
+			    
+			    
+<!-- 			      <div class="content"> -->
+<!-- 	            <div class="container-fluid"> -->
+<!-- 	                <div class="row"> -->
+<!-- 	                    <div class="col-md-12"> -->
+<!-- 	                        <div class="card"> -->
+<!-- 	                            <div class="card-header" data-background-color="purple"> -->
+<!-- 	                                <h4 class="title">Send & Create My Work</h4>	                                 -->
+<!-- 	                            </div> -->
+<!-- 	                            <div class="card-content"> -->
+<!-- 								<form> -->
+<!-- 	                                    <div class="form-group"> -->
+<!-- 											<Select class="form-control" id="category" tabindex="1"> -->
+<!-- 											<option>Choose Category</option> -->
+<!-- 											<option>Editor</option> -->
+<!-- 											<option>Publisher</option> -->
+<!-- 											<option>Layout Designer</option> -->
+<!-- 											<option>Cover Designer</option>								 -->
+<!-- 											</select> -->
+<!-- 										</div> -->
+
+<!-- 	                                    <div class="row"> -->
+<!-- 	                                        <div class="col-md-6"> -->
+<!-- 												<div class="form-group label-floating is-empty"> -->
+<!-- 													<label class="control-label">Min Price Range</label> -->
+<!-- 													<input type="number" class="form-control"> -->
+<!-- 												<span class="material-input"></span></div> -->
+<!-- 	                                        </div> -->
+<!-- 	                                        <div class="col-md-6"> -->
+<!-- 												<div class="form-group label-floating is-empty"> -->
+<!-- 													<label class="control-label">Max Price Range</label> -->
+<!-- 													<input type="number" class="form-control"> -->
+<!-- 												<span class="material-input"></span></div> -->
+<!-- 	                                        </div> -->
+<!-- 	                                    </div> -->
+
+<!-- 	                                    <div class="row"> -->
+<!-- 	                                        <div class="col-md-12"> -->
+<!-- 												<div class="form-group label-floating is-empty"> -->
+<!-- 													<label class="control-label">Prologue	</label> -->
+<!-- 													<input type="text" class="form-control"> -->
+<!-- 												<span class="material-input"></span></div> -->
+<!-- 	                                        </div> -->
+<!-- 	                                    </div> -->
+
+<!-- 	                                    <div class="row"> -->
+<!-- 	                                        <div class="col-md-12"> -->
+<!-- 	                                            <div class="form-group"> -->
+	                                               
+<!-- 													<div class="form-group label-floating is-empty"> -->
+<!-- 									    				<label class="control-label">Summary</label> -->
+<!-- 								    					<textarea class="form-control" rows="5"></textarea> -->
+<!-- 		                        					<span class="material-input"></span></div> -->
+<!-- 	                                            </div> -->
+<!-- 	                                        </div> -->
+<!-- 	                                    </div> -->
+										
+<!-- 										 <div class="form-group"> -->
+<!-- 										<input id="input-20"  type="file" class="form-control" placeholder="Select File" value="Select File" required> -->
+<!-- 									</div> -->
+										
+<!-- 	                                    <button type="submit" class="btn btn-primary pull-right">Proceed</button> -->
+<!-- 	                                    <div class="clearfix"></div> -->
+<!-- 	                                </form> -->
+<!-- 	                            </div> -->
+<!-- 	                        </div> -->
+<!-- 	                    </div> -->
+<!-- 	                </div> -->
+<!-- 	            </div> -->
+<!-- 	        </div> -->
+	            

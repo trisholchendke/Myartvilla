@@ -1,0 +1,301 @@
+<style>
+	.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size:20px;
+}
+.rating .filled {
+    color: orangered;
+}
+.clear{
+  margin-top:20px;
+}
+
+</style>
+<style>
+   
+   .fa-3x{
+       font-size: 2.1em; !important;
+   }
+   .share_social{
+   vertical-align: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+   }
+   .rate_Button{
+       margin: 14px 1px !important;
+       margin-left: 14px !important;
+	   padding: 4px 15px !important;
+    font-size: 10px !important;
+   }
+   .rate_this_heading{
+       float: left;
+    color: black;
+    margin-right: 14px;
+    font-size: 17px;
+   }
+      .lead{
+      margin-top: 18px !important;
+      }
+      .social-icons{
+          padding-top: 13px !important;
+    float: right;
+    padding-right: 27px;
+      
+      }
+      .social-icons i{
+      color: #ff7f50 !important;
+      margin-right:10px;
+      }
+      .social:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      }
+      .social {
+      -webkit-transform: scale(0.8);
+      /* Browser Variations: */
+      -moz-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      }
+      /*
+      Multicoloured Hover Variations
+      */
+      #social-fb:hover {
+      color: #3B5998;
+      }
+      #social-tw:hover {
+      color: #4099FF;
+      }
+      #social-gp:hover {
+      color: #d34836;
+      }
+      #social-em:hover {
+      color: #f39c12;
+      }
+      /* Button styles: */
+      i.fb,       span.fb{         color: #3b5998; }
+      i.tw,       span.tw{     	color: #00aced; }
+      i.google,   span.google{ 	color: #dd4b39; }
+      i.linkin,   span.linkin{ 	color: #007bb6; }
+      i.pinterest,span.pinterest{ color: #cb2027; }
+      #colorstar { color: #ee8b2d;}
+      .badForm {color: #FF0000;}
+      .goodForm {color: #00FF00;}
+      .evaluation { margin-left:30px;} 
+      .profile_img_post {
+      border: 1px solid rgba(0, 0, 0, .1);
+      height: 48px !important;
+      }.image-post {
+      display: block;
+      width: 50px;
+      height: 50px;
+      }
+      .post_description .img_post {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      height: 450px;
+      display: block;
+      }
+      .custom_hr_post {
+      margin-top: 20px;
+      margin-bottom: 0px !important;
+      border: 0;
+      border-top: 1px solid #eee;
+      width: 100% !important;
+      }
+      .right_padding{
+      padding-right:25px;
+      color: rgb(58, 87, 149);
+      }
+      .custom_input_padding{
+      padding-bottom:20px;
+      }
+      .comment_hr{
+      clear: both;
+      }
+      .p_commnts_count{
+      display: inline-block;
+      float: right;
+      margin-right: 10px;
+      }
+      .p_comments{
+      color: #365899;
+      display: inline-block;
+      }  
+      .post_desc{
+      margin-left: 14px;
+      }
+      .img_post_comment{
+      float:left;
+      }
+      .links-post1{
+      padding-left: 15px;
+      padding-bottom: 0px;
+      max-width: 100%;
+      padding-top: 15px;
+      }
+      .link-post{
+      margin-right:10px;
+      }
+      .comments{
+      padding-left:15px;
+      }
+      .title-post{
+      color: rgb(58, 87, 149);
+      font-weight: bold;
+      }
+      .star_rating1{
+      float: left;
+    padding-left: 14px;
+    padding-top:10px;
+    padding-right: 20px;
+      }
+      .star_rating2{
+      padding-top:10px;
+      }
+      .p_rate_this_work{
+          float: left;
+    line-height: 2.40;
+    padding-top: 10px;
+    padding-right: 16px;
+    font-weight: 600;
+      }
+.hover:hover {
+  pointer-events: none;
+}
+.red{
+  color:red;
+}
+
+.blue{
+ pointer-events: none;
+}
+   </style>
+<div class="container-fluid">
+    <div class="row">
+	<div class="col-md-12">
+	<div class="thumbnail thumbnail-post" ng-repeat="works1 in works|reverse">
+		<div class="caption">
+			<div class="media">
+				<div class="media-left">
+					<a href="" class="image-post">
+						<img src="{{works1.post_owner[0].profile_pic ? works1.post_owner[0].profile_pic : './assets/img/avatar.png'}}" width="50" height="50" class="profile_img_post"/>
+					</a>	
+				</div>
+				<div class="media-body">
+				<a class="media-heading title-post" href="share_post.html">{{works1.post_name|ucfirst}}</a>
+				</div>
+			</div>
+			<div class="post_description"> 
+			<p class="post_desc">{{works1.post_description}}</p><p>
+				<img alt="" ng-if="works1.file_type == 'application/pdf'" style="width: 10% !important; height: 23% !important;" title="" src="./assets/img/pdf.png" class="img_post">
+				<img alt="" ng-if="works1.file_type == 'image/png'" title="" src="{{works1.file_path}}" class="img_post">
+				<img alt="" ng-if="works1.file_type == 'image/jpeg'" title="" src="{{works1.file_path}}" class="img_post">
+				<img alt="" ng-if="works1.file_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"  style="width: 10% !important; height: 23% !important;" title="" src="./assets/img/docx.png" class="img_post">
+			</p></div>
+		</div>
+		<hr class="custom_hr_post">
+		<div class="row">
+            <div class="col-md-6">
+            <div 
+            	star-rating rating-value="works1.post_rating_average" 
+            	class="hover star_rating1" 
+            	max="5" 
+            	on-rating-selected="getSelectedRating(1)" 
+            	style="float:left"
+            	ng-class="{hover: hoverme}"
+            >
+            </div>
+			<p style="float:left" class="p_rate_this_work">Rate This Work</p>
+			<div ng-init="rating = 1">
+			
+			</div>
+			<div 
+				star-rating rating-value="rating" 
+				ng-disabled="true" 
+				max="5" 
+				class="star_rating2" 
+				on-rating-selected="rateFunction1(rating,works1.post_id)" 
+				style="float:left"
+				ng-class="class"
+			>
+			</div>
+			<button  ng-class="class" type="button" class="btn btn-primary btn-xs rate_Button" ng-click="rateFunction(rating,works1.post_id)">Rate</button>
+			</div>
+			<div class="col-md-6">
+                                 <div class="social-icons">
+								 <span class="share_social">Share</span>
+<!--                                      <g:plus -->
+<!--                                     	ng-click="share_google(works1)" -->
+<!--                                     	gplus data-size="tall"	data-annotation="bubble" href="http://127.0.0.1:8080/share_post.html#/{{works1.post_id}}" action="share" -->
+<!--                                     > -->
+<!--                                     <g:plus> -->
+                                    <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                    <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                                    <a 
+                                    	ng-click="share_google(works1.post_id)"
+	  								>
+	  									<i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i>
+	  								</a>
+<!--                                     	href="javascript:angular.element( -->
+<!-- 											function(){ -->
+<!-- 											var w=480;var h=380; -->
+<!-- 											var abc = 555; -->
+<!-- 											var x=Number((window.screen.width-w)/2); -->
+<!-- 											var y=Number((window.screen.height-h)/2); -->
+<!-- 											window.open('https://plus.google.com/share?url='+encodeURIComponent('http://127.0.0.1:8080/Artist.html#/work_history/' + abc)+' -->
+<!-- 											  &title='+encodeURIComponent(document.title),'','width='+w+',height='+h+',left='+x+',top='+y+', -->
+<!-- 											  scrollbars=no'); -->
+<!-- 	 									 })();"  -->
+<!-- 	  									style="background: url(/wp-content/themes/HTML5/images/googleplus.png) no-repeat scroll left center transparent;" -->
+                                    <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-linkedin-square fa-3x social"></i></a>
+                                 </div>
+                              </div>
+                             
+                           </div>
+		<hr class="custom_hr_post">
+		 <div class="links-post1">
+			<img src="{{works1.post_owner[0].profile_pic ? works1.post_owner[0].profile_pic : './assets/img/avatar.png'}}" width="50" height="50" class="profile_img_post"/>
+			<div class="links-post">
+<!-- 			<div star-rating rating-value="rating" max="10" on-rating-selected="rateFunction(rating,works1.post_id)"></div> -->
+				<div class="form-group">
+				    <div class="col-sm-10 custom_input_padding">
+					<input type="text" class="form-control custom_form_group" ng-model="comment_text" ng-enter="submitComment(comment_text,works1.post_id)" id="pwd" placeholder="Write a comment">
+					</div>	
+				</div>
+		</div>
+		<hr class="comment_hr">
+			<div class="comments">
+				<p ng-repeat ="comments in works1.post_comments|reverse" class="PComment"><img src="{{comments.profile_pic ? comments.profile_pic : './assets/img/avatar.png'}}" width="50" height="50"><span class="commentor_name"> {{comments.firstname|ucfirst}} {{comments.lastname|ucfirst}}</span> <span>{{comments.comment}}</span></p>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+<script>
+      window.___gcfg = {
+        lang: 'en-US',
+        parsetags: 'onload'
+      };
+    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+

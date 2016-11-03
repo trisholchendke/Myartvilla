@@ -1,0 +1,135 @@
+<style>
+.modal-backdrop {
+    position: initial !important;
+}
+.img-chg{
+width:250px !important;
+height:209px !important;
+}
+.portfolio-hover{
+width:235px !important;
+height:209px !important;
+}
+.portfolio-hover-content{
+top:34% !important;
+}
+.zero_padding {
+    padding-right: 0px !important;
+    padding-left: 15px !important;
+}
+#portfolio .portfolio-item{
+margin-bottom:8px !important;
+}
+
+</style>
+	            <div class="">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+	                            <div class="card-header" style="margin:0px; !important" data-background-color="purple">
+	                                <h4 class="title">My Dashboard</h4>
+							    </div>
+							    
+	                            
+	                        </div>
+	                    </div>
+					</div>
+					<div class="">
+ <section id="portfolio">
+        <div class="">
+            <div class="row">
+                <div class="col-sm-4 portfolio-item zero_padding zero_padding" ng-repeat="works1 in works">
+<!--                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
+                    <a href="javascript:void(0)"  class="portfolio-link" ng-click="getModalData(works1.id)" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                             <p>{{works1.post_name}}</p>
+                               <p>Like <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>{{works1.like_count}}</p>
+                           <p>Unlike <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>{{works1.unlike_count}}</p>
+                            </div>
+                        </div>
+                        <img src="{{works1.file_path}}" class="img-responsive img-chg" alt="">
+                    </a>
+                </div>
+                </div>
+           </div>
+        
+<div class="modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title" id="myModalLabel">{{works1.post_name}}</h4>
+                  </div>
+                  <div class="modal-body">
+                     <h2></h2>
+                     <p class="item-intro text-muted"></p>
+                     <img class="img-responsive img-centered share_img" src="{{works1.file_path}}" alt="">
+                     <p class="share_img_desc">{{works1.post_description}}</p>
+          
+                 
+<!--                         <a data-dismiss="modal" data-toggle="modal" href="#myModal1"> -->
+                      <h5 class="share_title text-center">Share Via Social Media</h5>				
+                     <hr style="margin-bottom:5px;">
+                     <div class="row ">
+                    <div class="col-md-12">
+                    <div class="share_wrapper">
+                               <ul class="list-inline facebook_ul">
+                        <li>
+                           <button class="custom_dislike_button" ng-disabled="works1.like_flag == 1" ng-click="like(works1);"><p>Like <span class="social_icon"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span><span class="badge">{{works1.like_count}}</span></p></button>
+                        </li>
+                        <li>
+                           <button class="custom_like_button" ng-disabled="works1.unlike_flag == 1" ng-click="unlike(works1);"><p>Unlike <span class="social_icon"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> <span class="badge">{{works1.unlike_count}}</span></p></button>
+                        </li>
+                          <li>
+                          
+                           <button class="custom_like_button" ng-click="toggleCustom()"><p>Comment <span class="social_icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span> <span class="badge">{{works1.comments.length}}</span></p></button>
+                        </li>
+                     </ul>
+                      
+   <form class="form-inline comment_form" novalidate="" name="comment_form" ng-hide="custom">
+  <div class="form-group">
+     <div class="col-sm-12" ng-class="{ 'has-error' : comment_form.comment1.$invalid && !comment_form.comment1.$pristine }">
+      <input type="text"
+       class="form-control comment_textbox"
+         name="comment1" 
+         ng-model="comment_form.comment"
+          placeholder="Enter comment"
+          value="value"
+          id="comment_value"
+          required
+          >
+          <p class="help-block" ng-show="comment_form.comment1.$invalid && !comment_form.comment1.$pristine" >
+          Please enter comment.
+          </p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default btn-sm" ng-click="submitComment(comment_form.comment,works1.id)" ng-disabled="comment_form.$invalid" >Submit</button>
+</form>
+                    <div class="facebook1">
+                     <a facebook-feed-share class="facebookShare" data-url='http://google.com' data-shares='shares', data-caption='example caption' data-picture='https://myapp-8003.herokuapp.com/img/download.png' data-description="Example text" data-callback='callback'>{{ shares }}</a>
+                     </div>
+                    
+                       <div class="twiiter_share">
+                     <a twitter data-count='horizontal' data-url='{{url}}'  data-size="medium" data-text='{{text}}' ></a>
+                     </div>
+                 
+                     <div class="linkedinShare" linkedin data-url='{{url}}' data-title='{{title}}' data-summary="{{text}}" data-shares='linkedinshares'>{{linkedinshares}}</div>
+               
+                     <div class="gplus" gplus data-size="tall" data-annotation="bubble" data-href='{{url}}' data-action='share'></div>
+                     </div>
+             		</div>
+                  </div>
+                          <hr>
+                  <div class="modal-footer">
+<!--                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+    </section>
+    </div>
+	            </div>
+	            

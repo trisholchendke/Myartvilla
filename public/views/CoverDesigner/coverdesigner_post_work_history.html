@@ -1,0 +1,70 @@
+<style>
+.custom_input_comment {
+    float: right;
+    margin-right: 82px;
+}
+</style>
+<div class="">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="card">
+            <div class="card-header" style="margin:0px; !important" data-background-color="purple">
+               <h4 class="title">My Work History</h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="">
+         <section style="margin-top: 14px;">
+		<div class="container" >
+			<div class="row">
+				<div class="col-md-8">
+				<h2 ng-hide="works.length>0">No Data Found.</h2>
+<!-- 					<div class="thumbnail thumbnail-post" ng-repeat="works1 in works|reverse"> -->
+					<div ng-show="works.length>0" class="thumbnail thumbnail-post" ng-repeat="works1 in works|reverse">
+						<div class="caption1">
+							<div class="media">
+								<div class="media-left">
+									<a href="" class="image-post">
+<!-- 										<img src="{{works1.file_path}}" width="50" height="50" class="profile_img_post"/> -->
+									</a>	
+								</div>
+								<div class="media-body">
+<!-- 								<a class="media-heading title-post" href="#">{{works1.post_owner[0].firstname|ucfirst}} {{works1.post_owner[0].lastname|ucfirst}}</a> -->
+								<a class="media-heading title-post" href="#">{{works1.post_name|ucfirst}}</a>
+								</div>
+							</div>
+							<div class="post_description"> 
+								<img alt="Client Logo"	 src="{{works1.file_path}}" class="img_post"/>
+							</div>
+						</div>
+						{{works1.post_description}}
+						<hr class="custom_hr_post">
+						 <div class="links-post">
+							<span class="fa fa-thumbs-o-up link-post active"></span><a href="#" class="link-post active right_padding" role="button">Like</a> 
+							<span class="fa fa-comment link-post"></span><a href="#" class="link-post right_padding" role="button">Comment</a> 
+							<span class="fa fa-reply link-post"></span><a href="#" class="link-post right_padding" role="button">Share</a> 
+						</div>
+						<hr>
+						 <div class="links-post1">
+							<img src="./assets/img/avatar.png" width="40" height="40" class="">
+							
+							<input class="form-control form1 custom_input_comment" type="text" ng-model="comment_text" ng-enter="submitComment(comment_text,works1.post_id)" id="sm"> 
+							
+	
+						</div>
+						<hr>
+						<div class="comments">
+						<p class="PComment" ng-repeat ="comments in works1.post_comments|reverse">
+						<img src="{{comments.profile_pic ? comments.profile_pic : './assets/img/avatar.png'}}" width="50" height="50">
+						<span class="commentor_name"> {{comments.firstname|ucfirst}} {{comments.lastname|ucfirst}}</span> <span>{{comments.comment}}</span></p>
+						
+						</div>
+						
+					</div>
+			    </div>
+            </div>
+        </div>
+    </section>
+   </div>
+</div>

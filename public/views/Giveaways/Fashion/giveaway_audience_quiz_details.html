@@ -1,0 +1,80 @@
+<!-- <div class=""> -->
+<!--    <div class="row"> -->
+<!--       <div class="col-md-12"> -->
+<!--          <div class="card"> -->
+<!--             <div class="card-header" style="margin:0px; !important" data-background-color="purple"> -->
+<!--                <h4 class="title">Audience Answer Sheet</h4> -->
+<!--             </div> -->
+<!--          </div> -->
+<!--       </div> -->
+<!--    </div> -->
+<!--    <div class=""> -->
+<!--          <section style="margin-top: 14px;"> -->
+<!-- 		<div class="container" > -->
+<!-- 			<div class="row"> -->
+<!-- 			<div ng-repeat = "quiz in answers[0].audience_answers[0].answers"> -->
+<!-- 			<label>Q{{quiz.question_id}}</label><p>{{quiz.question_name}}</p> -->
+<!-- 			<p>{{quiz.answer}}</p> -->
+<!-- 			</div> -->
+<!-- 	    </div> -->
+<!--         <button style="float:left !important;"  -->
+<!--         		        	type="submit"  -->
+<!--                         	class="btn btn-primary pull-right" -->
+<!--                         	ng-hide="answers[0].winner == 1" -->
+<!--                         	ng-click="makeWinner(answers[0].audience_id)" -->
+<!--                         >Make Winner -->
+<!--                         </button> -->
+<!--         <button  -->
+<!--         		        	type="submit"  -->
+<!--                         	class="btn btn-primary" -->
+<!--                         	ng-show="answers[0].winner == 1" -->
+<!--                         	ng-click="back()" -->
+<!--                         >Back -->
+<!--                         </button> -->
+<!--         </div> -->
+<!--     </section> -->
+<!--    </div> -->
+<!-- </div> -->
+<div class="content">
+				 <div class="container-fluid">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="card">
+	                            <div class="card-header" data-background-color="purple">
+	                                <h4 class="title">Audience Answer Sheet</h4>	                                
+	                            </div>
+	                            <div class="card-content">
+								<article class="question question-type-normal">
+
+									<form class="form-horizontal">
+									<div ng-repeat = "quiz in answers[0].audience_answers[0].answers">
+										<h3>
+										<a href="single_question.htm" class="custom_giveaway_question">Q{{quiz.question_id}}){{quiz.question_name}}?</a>
+										</h3>
+										<div class="form-group" style="margin:0px !important;">
+										
+										  <div class="col-sm-12">
+											<span class="custom_giveaway_answer">{{quiz.answer}}</span>
+										  </div>
+										</div>
+									</div>
+									<div class="form-group" style="margin:0px !important;">
+									  <div class="col-sm-10">
+										<button ng-click="back()" type="submit" class="btn btn-default">Back</button>
+										<button 
+											class="btn btn-default"
+											type="submit" 
+											ng-hide="answers[0].winner == 1"
+                        					ng-click="makeWinner(answers[0].audience_id)"
+										>Make Winner
+										</button>
+									  </div>
+									</div>
+									</form>
+</article>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>

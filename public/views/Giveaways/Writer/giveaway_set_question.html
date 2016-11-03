@@ -1,0 +1,89 @@
+<style>
+.file-actions{
+display:none !important;
+}
+.btn-file{
+width:21% !important;
+}
+</style>
+<div class="container-fluid">
+             <div class="row">
+                 <div class="col-md-12">
+                     <div class="card">
+                         <div class="card-header" data-background-color="purple">
+                             <h4 class="title">Give Aways Question</h4>	                                
+                         </div>
+                         <div class="card-content">
+								<form class="form-horizontal" novalidate="" name="PostGiveawayform">
+									<div class="form-group">
+									  
+									</div>
+									<div class="form-group">
+									  <label class="control-label col-sm-2" for="pwd">GiveAway No Of Question:</label>
+									  <div class="col-sm-10">
+										<input 
+											type="number" 
+											class="form-control" 
+											id="giveawayquestion" 
+											placeholder="No. Of Questions"
+						                	ng-model="no_of_question"
+						                	ng-hide="answer_sheet.length>0"
+										>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <div class="col-sm-offset-2 col-sm-10">
+										<button 
+											type="submit" 
+											class="btn btn-default"
+											ng-click="create_answer_sheet()"
+               								ng-hide="answer_sheet.length>0"
+										>Submit
+										</button>
+									  </div>
+									</div>
+									<button 
+               		class="btn btn-sucess" 
+               		ng-click="back_to_create_question_sheet()"
+               		ng-hide="answer_sheet.length == 0"
+               	>Back To Create Question
+               	</button>
+                	<div ng-class="{ 'has-error' : PostGiveawayform.each_question.question_name.$invalid && !PostGiveawayform.each_question.question_name.$pristine }">
+                	<div  class="well" ng-repeat="each_question in answer_sheet">
+                		<p><b>Question {{$index+1}} )</b></p>
+                		<textarea 
+                			type="text" 
+                			ng-model="each_question.question_name"
+                			class="form-control"
+                			placeholder="Enter Your Question Here"
+                			height="100%"
+                			width="100%"
+                			name="question_name"
+                			required
+                		> 
+                		</textarea>
+                		 <p ng-show="PostGiveawayform.question_name.$invalid && !PostGiveawayform.question_name.$pristine"
+							class="help-block">Post Main Category is required
+						</p>
+                		<br>
+                		<br>
+                		<button 
+                			class="btn btn-info" 
+                			ng-click="clear_question(each_question.question_id)"
+                		>Clear Question {{$index+1}}
+                		</button>
+                	</div>
+                	</div>
+               		<button 
+               			class="btn btn-warning" 
+               			ng-click="final_question_sheet(each_question.question_id)"
+               			ng-if="answer_sheet.length>0"
+               			ng-disabled="PostGiveawayform.$invalid"
+               		>Final Question
+               		</button>
+				  </form>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+</div>
